@@ -2,7 +2,7 @@
 - [Sumário](#sumário)
 - [📍 Intro](#-intro)
 - [💾 Modelo de banco de dados](#-modelo-de-banco-de-dados)
-- [🔐 Controle de acesso de usuário (UACL - User access control list)](#-controle-de-acesso-de-usuário-uacl---user-access-control-list)
+- [🔐 Controle de acesso de usuário (ACL - User access control list)](#-controle-de-acesso-de-usuário-acl---user-access-control-list)
   - [Perfil](#perfil)
   - [Permissão](#permissão)
   - [Permissão por perfil](#permissão-por-perfil)
@@ -117,7 +117,7 @@ Table permissao_perfil {
 }
 ```
 
-## 🔐 Controle de acesso de usuário (UACL - User access control list)
+## 🔐 Controle de acesso de usuário (ACL - User access control list)
 
 ### Perfil
 
