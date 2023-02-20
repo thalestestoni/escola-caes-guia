@@ -1,6 +1,7 @@
 ## Sumário
-[Intro](#-intro)
-[Modelo de banco de dados](#modelo-de-banco-de-dados)
+- [Sumário](#sumário)
+- [📍 Intro](#-intro)
+- [Modelo de banco de dados](#modelo-de-banco-de-dados)
 
 ## 📍 Intro
 
