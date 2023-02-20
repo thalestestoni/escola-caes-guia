@@ -5,7 +5,7 @@
 
 ## 📍 Intro
 
-Neste documento encontra-se todos os arquivos pertinentes a documentação do projeto [Escola de cães-guia Hkeller](../README.md)
+Neste documento encontra-se todos os arquivos pertinentes a documentação do projeto [Escola de cães-guia HKeller](../README.md)
 
 ## 💾 Modelo de banco de dados
 
