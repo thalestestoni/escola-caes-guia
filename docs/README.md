@@ -2,6 +2,10 @@
 - [Sumário](#sumário)
 - [📍 Intro](#-intro)
 - [💾 Modelo de banco de dados](#-modelo-de-banco-de-dados)
+- [🔐 Controle de acesso de usuário (UACL - User access control list)](#-controle-de-acesso-de-usuário-uacl---user-access-control-list)
+  - [Perfil](#perfil)
+  - [Permissão](#permissão)
+  - [Permissão por perfil](#permissão-por-perfil)
 
 ## 📍 Intro
 
@@ -112,3 +116,47 @@ Table permissao_perfil {
   id_permissao int [pk, ref: > permissao.id]
 }
 ```
+
+## 🔐 Controle de acesso de usuário (UACL - User access control list)
+
+### Perfil
+
+| nome | descricao |
+| -- | -- |
+| admin | Administrador |
+| funcionario | Funcionário |
+| tutor | Tutor |
+
+### Permissão
+
+| nome | descricao |
+| -- | -- |
+| criar_cao | Criar cão |
+| editar_cao | Editar cão |
+| visualizar_cao | Visualizar cão |
+| listar_caes | Listar cães |
+| criar_tutor | Criar tutor |
+| editar_tutor | Editar tutor |
+| visualizar_tutor | Visualizar tutor |
+| inativar_tutor | Inativar tutor |
+| criar_evento | Criar evento |
+| editar_evento | Editar evento |
+| visualizar_evento | Visualizar evento |
+| listar_eventos | Listar eventos |
+
+### Permissão por perfil
+
+| permissao | perfis  |
+| -- | -- |
+| criar_cao | admin, funcionario |
+| editar_cao | admin, funcionario |
+| visualizar_cao | admin, funcionario, tutor |
+| listar_caes | admin, funcionario |
+| criar_tutor | admin, funcionario |
+| editar_tutor | admin, funcionario |
+| visualizar_tutor | admin, funcionario, tutor |
+| inativar_tutor | admin, funcionario |
+| criar_evento | admin, funcionario |
+| editar_evento | admin, funcionario |
+| visualizar_evento | admin, funcionario, tutor |
+| listar_eventos | admin, funcionario, tutor |
