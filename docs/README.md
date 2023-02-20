@@ -1,13 +1,13 @@
 ## Sumário
 - [Sumário](#sumário)
 - [📍 Intro](#-intro)
-- [Modelo de banco de dados](#modelo-de-banco-de-dados)
+- [💾 Modelo de banco de dados](#-modelo-de-banco-de-dados)
 
 ## 📍 Intro
 
 Neste documento encontra-se todos os arquivos pertinentes a documentação do projeto [Escola de cães-guia Hkeller](../README.md)
 
-## Modelo de banco de dados
+## 💾 Modelo de banco de dados
 
 <img src="./images/modelagem_banco.png" />
 
