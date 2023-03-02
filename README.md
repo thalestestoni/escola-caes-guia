@@ -12,6 +12,5 @@ Um cão-guia é um tipo de cão de assistência. É um animal adestrado para gui
 
 ## 📒 Estrutura deste repositório
 
-- [backe-end](./back-end/): Código fonte do backend.
-- [front-end](./front-end/): Código fonte do frontend.
+- [app](./app/): Todo código fonte da aplicação (front-end e back-end).
 - [docs](./docs/): Todas as documentações referentes a execução do projeto.
