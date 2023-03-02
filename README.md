@@ -4,7 +4,7 @@ Este projeto faz parte do trabalho de conclusão de curso de Análise e Desenvol
 
 A idéia deste sistema surgiu a partir de um levantamento dos alunos do curso de Análise e Desenvolvimento de Sistemas (ADS) do Instituto Federal de Santan Catarina (IFSC) sobre as demandas de sistemas na sociedade.
 
-O sistema desenvolvido server para gerenciar o cadastro e histórico dos cães guias treinados na [Escola de cães-guias HKeller](https://caoguia.org.br/).
+O sistema desenvolvido serve para gerenciar o cadastro e histórico dos cães guias treinados na [Escola de cães-guias HKeller](https://caoguia.org.br/).
 
 ## 🐕‍🦺 Escola de cães-guia HKeller
 
