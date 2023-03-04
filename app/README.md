@@ -38,7 +38,7 @@ docker ps
 
 Agora você já deve ter uma instância do PostgreSQL rodando no container docker.
 
-Para para o container
+Para parar o container
 
 ```bash
 docker stop postgres
