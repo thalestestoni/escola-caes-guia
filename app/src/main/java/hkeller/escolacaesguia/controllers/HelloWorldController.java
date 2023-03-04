@@ -1,4 +1,4 @@
-package hkeller.escolacaesguia;
+package hkeller.escolacaesguia.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
