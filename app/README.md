@@ -10,6 +10,8 @@
 
 O SGBD utilizado é o Postgres na versão `15.2`.
 
+### Instalação da infraestrutura
+
 Baixe e instale o [docker](https://www.docker.com/).
 
 Após instalar o docker, abra o terminal e execute:
@@ -49,3 +51,9 @@ Para iniciar o container novamente
 ```bash
 docker run postgres
 ```
+
+### Criando as tabelas
+
+Utilize um administrador de banco de dados como [dbeaver](https://dbeaver.io/download/) ou o próprio [pgAdmin](https://www.pgadmin.org/) para se conectar ao banco de dados e executar os scripts sql.
+
+Baixe e execute o [script de criação das tabelas](../docs/files/script_criacao_tabelas.sql) no software escolhido para se conectar ao banco.
