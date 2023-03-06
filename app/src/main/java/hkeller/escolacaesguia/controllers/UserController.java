@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import hkeller.escolacaesguia.dtos.CreateUserDto;
-import hkeller.escolacaesguia.models.UserModel;
+import hkeller.escolacaesguia.models.User;
 import hkeller.escolacaesguia.services.CreateUserService;
 import jakarta.validation.Valid;
 
@@ -23,8 +23,8 @@ public class UserController {
 
     @PostMapping
     public void create(@RequestBody @Valid CreateUserDto createUserDto) {
-        var userModel = new UserModel();
+        var userModel = new User();
         BeanUtils.copyProperties(createUserDto, userModel);
         createUserService.execute(userModel);
-    } 
+    }
 }

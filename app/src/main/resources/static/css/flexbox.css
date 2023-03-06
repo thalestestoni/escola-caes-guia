@@ -1,0 +1,10 @@
+.cabecalhoPrincipal .container{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.cabecalhoPrincipal-logout{
+	display: flex;
+	justify-content: space-between;
+}

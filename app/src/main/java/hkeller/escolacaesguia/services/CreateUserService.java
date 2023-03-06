@@ -2,7 +2,7 @@ package hkeller.escolacaesguia.services;
 
 import org.springframework.stereotype.Service;
 
-import hkeller.escolacaesguia.models.UserModel;
+import hkeller.escolacaesguia.models.User;
 import hkeller.escolacaesguia.repositories.UserRepository;
 import jakarta.transaction.Transactional;
 
@@ -16,7 +16,7 @@ public class CreateUserService {
     }
 
     @Transactional
-    public UserModel execute(UserModel userModel) {
+    public User execute(User userModel) {
         return userRepository.save(userModel);
     }
 }

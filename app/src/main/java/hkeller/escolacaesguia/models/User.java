@@ -12,11 +12,11 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "usuario")
-public class UserModel implements Serializable {
+public class User implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(nullable = false)
     private String nome;
