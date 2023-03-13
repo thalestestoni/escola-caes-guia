@@ -16,7 +16,15 @@ public class CreateUserService {
     }
 
     @Transactional
-    public User execute(User userModel) {
-        return userRepository.save(userModel);
+    public User execute(User user) {
+        User existsUser = userRepository.findByEmail(user.getEmail());
+
+        if (existsUser != null) {
+            throw new Error("Usuário já existe!");
+        }
+
+        User createdUser = userRepository.save(user);
+
+        return createdUser;
     }
 }

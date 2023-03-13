@@ -23,8 +23,8 @@ public class UserController {
 
     @PostMapping
     public void create(@RequestBody @Valid CreateUserDto createUserDto) {
-        var userModel = new User();
-        BeanUtils.copyProperties(createUserDto, userModel);
-        createUserService.execute(userModel);
+        var user = new User();
+        BeanUtils.copyProperties(createUserDto, user);
+        createUserService.execute(user);
     }
 }
