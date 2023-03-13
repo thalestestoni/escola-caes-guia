@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 
 import hkeller.escolacaesguia.dtos.LoginDto;
 import hkeller.escolacaesguia.repositories.UserRepository;
-import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class LoginService {
@@ -22,7 +21,7 @@ public class LoginService {
         
         var user = userRepository.findByEmail(login.getEmail());
 
-        if (user.getPassword() != login.getPassword()) {
+        if (!user.getPassword().equals(login.getPassword())) {
             return false;
         }
         

@@ -5,7 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import hkeller.escolacaesguia.dtos.LoginDto;
 import hkeller.escolacaesguia.services.LoginService;
@@ -26,12 +25,12 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String login(@ModelAttribute LoginDto login, Model model) {
-        // var loginWithSuccess = loginService.login(login);
+    public String loginSubmit(@ModelAttribute LoginDto login, Model model) {
+        var loginWithSuccess = loginService.login(login);
 
-        // if (!loginWithSuccess) {
-        //     return "login_incorreto";
-        // }
+        if (!loginWithSuccess) {
+            return "login_incorreto";
+        }
         
         // model.addAttribute("login", login);
         
