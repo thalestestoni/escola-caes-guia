@@ -1,7 +1,5 @@
 package hkeller.escolacaesguia.dtos;
 
-import jakarta.validation.constraints.NotBlank;
-
 public class LoginDto {
 
     // @NotBlank

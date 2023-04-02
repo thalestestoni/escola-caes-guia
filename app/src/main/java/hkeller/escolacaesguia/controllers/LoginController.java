@@ -23,17 +23,4 @@ public class LoginController {
       model.addAttribute("login", new LoginDto());
       return "login";
     }
-
-    @PostMapping("/login")
-    public String loginSubmit(@ModelAttribute LoginDto login, Model model) {
-        var loginWithSuccess = loginService.login(login);
-
-        if (!loginWithSuccess) {
-            return "login_incorreto";
-        }
-        
-        // model.addAttribute("login", login);
-        
-        return "tela_inicial";
-    }
 }

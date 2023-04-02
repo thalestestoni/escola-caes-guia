@@ -1,5 +1,7 @@
 package hkeller.escolacaesguia.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import hkeller.escolacaesguia.models.User;
@@ -9,10 +11,11 @@ import jakarta.transaction.Transactional;
 @Service
 public class CreateUserService {
     
-    final UserRepository userRepository;
+    @Autowired
+    UserRepository userRepository;
 
-    public CreateUserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    private BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
     @Transactional
@@ -22,6 +25,8 @@ public class CreateUserService {
         if (existsUser != null) {
             throw new Error("Usuário já existe!");
         }
+
+        user.setPassword(passwordEncoder().encode(user.getPassword()));
 
         User createdUser = userRepository.save(user);
 
