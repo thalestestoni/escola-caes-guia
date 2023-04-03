@@ -1,90 +1,162 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/css/form.css">
-    <link rel="stylesheet" type="text/css" href="/css/flexbox.css">
-    <title>Cadastro Cão - Helen Keller</title>
-</head>
-<body>
-    <nav>
-        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white">
-          <img class="my-0 mr-md-auto" src="/images/logo2.png" alt="">
-          <h4>
-            <a class="nav-item-cor my-0 mr-md-auto font-weight-normal" th:href="@{/logout}">Logout</a>
-          </h4>
-        </div> 
+<html lang="pt-br">
 
-        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <a class="nav-item nav-link active nav-item-cor" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Cão</a>
-          <a class="nav-item nav-link nav-item-cor" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Registro de cães</a>
-        </div>
-    </nav>
-    <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-          <div class="accordion form-cadastro-cao" id="accordionExample">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <button class="btn btn-link nav-item-cor" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Elvis
-                  </button>
-                  <button type="button" class="btn btn-outline-warning btn-sm">
-                    Atualizar
-                  </button>
-                  <button type="button" class="btn btn-outline-danger btn-sm">
-                    Deletar
-                  </button>               
-                </h5>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/css/form.css">
+  <link rel="stylesheet" type="text/css" href="/css/flexbox.css">
+  <title>Cadastro Cão - Helen Keller</title>
+</head>
+
+<body>
+  <nav>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white">
+      <img class="my-0 mr-md-auto" src="/images/logo2.png" alt="">
+      <h4>
+        <a class="nav-item-cor my-0 mr-md-auto font-weight-normal" href="./index.html">Logout</a>
+      </h4>
+    </div>
+
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active nav-item-cor" id="nav-cao-tab" data-toggle="tab" href="#nav-cao" role="tab"
+        aria-controls="nav-cao" aria-selected="true">Cão</a>
+      <a class="nav-item nav-link nav-item-cor" id="nav-tutor-tab" data-toggle="tab" href="#nav-tutor" role="tab"
+        aria-controls="nav-tutor" aria-selected="false">Tutor</a>
+      <a class="nav-item nav-link nav-item-cor" id="nav-cadastro-tab" data-toggle="tab" href="#nav-cadastro" role="tab"
+        aria-controls="nav-cadastro" aria-selected="false">Cadastros</a>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+
+    <!--CAO-->
+    <div class="tab-pane fade show active" id="nav-cao" role="tabpanel" aria-labelledby="nav-cao-tab">
+      <div class="accordion form-cadastro-cao" id="primeiro-cao">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link nav-item-cor" type="button" data-toggle="collapse"
+                data-target="#primeiro-callapse-cao" aria-expanded="true" aria-controls="collapseOne">
+                Elvis
+              </button>
+              <button type="button" class="btn btn-outline-warning btn-sm">
+                Atualizar
+              </button>
+              <button type="button" class="btn btn-outline-danger btn-sm">
+                Deletar
+              </button>
+            </h5>
+          </div>
+
+          <div id="primeiro-callapse-cao" class="collapse show" aria-labelledby="headingOne"
+            data-parent="#primeiro-cao">
+            <div class="card-body">
+              <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3">
+                <img class="px-md-4 p-4" src="/images/icon-teste-cao.jpg" alt="Imagem cão" width="500px"
+                  height="500px">
+                <div>
+                  <p><strong>Nome:</strong>Elvis</p>
+                  <p><strong>Genêro:</strong>Masculino</p>
+                  <p><strong>Cor:</strong>Preta</p>
+                  <p><strong>Data de nascimento:</strong>09/2020</p>
+
+                  <p><strong>Pai:</strong>Vernom</p>
+                  <p><strong>Mãe:</strong>Gladys</p>
+                  <p><strong>Status:</strong>Trabalhando</p>
+                </div>
               </div>
-          
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="card-body">
-                  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3">
-                    <img class="px-md-4 p-4" src="/images/icon-teste-cao.jpg" alt="Imagem cão" width="500px" height="500px">
-                    <div>
-                      <p><strong>Nome:</strong>Elvis</p>
-                      <p><strong>Genêro:</strong>Masculino</p>
-                      <p><strong>Cor:</strong>Preta</p>
-                      <p><strong>Data de nascimento:</strong>09/2020</p>
-                    
-                      <p><strong>Pai:</strong>Vernom</p>
-                      <p><strong>Mãe:</strong>Gladys</p>
-                      <p><strong>Status:</strong>Trabalhando</p>
-                    </div>
-                  </div>     
-                  <div class="p-3 px-md-4 mb-3">
-                    <div>
-                      <h4>Histórico de eventos 
-                        <img src="/images/mais.png" class="px-md-2 p-2" style="cursor: pointer;" onclick="">
-                      </h4>                      
-                    </div>
-                    <div>
-                      <dl>
-                        <dt>29/07/2021</dt>
-                        <dd>- Começou a trabalhar oficialmente na Lince Tech</dd>
-                        <dt>29/06/2021</dt>
-                        <dd>- Novo tutor: Ronaldo</dd>
-                        <dt>29/05/2021</dt>
-                        <dd>- Formado como cão emocional</dd>
-                      </dl>                      
-                    </div>
-                  </div>                               
+              <div class="p-3 px-md-4 mb-3">
+                <div>
+                  <h4>Histórico de eventos
+                    <img src="/images/mais.png" class="px-md-2 p-2" style="cursor: pointer;" onclick="">
+                  </h4>
+                </div>
+                <div>
+                  <dl>
+                    <dt>29/07/2021</dt>
+                    <dd>- Começou a trabalhar oficialmente na Lince Tech</dd>
+                    <dt>29/06/2021</dt>
+                    <dd>- Novo tutor: Ronaldo</dd>
+                    <dt>29/05/2021</dt>
+                    <dd>- Formado como cão emocional</dd>
+                  </dl>
                 </div>
               </div>
             </div>
           </div>
-
-        </form>
         </div>
-        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            <form class="form-cadastro-cao">
+      </div>
+    </div>
+
+    <!--TUTOR-->
+    <div class="tab-pane fade show active" id="nav-tutor" role="tabpanel" aria-labelledby="nav-tutor-tab">
+      <div class="accordion form-cadastro-cao" id="primeiro-tutor">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link nav-item-cor" type="button" data-toggle="collapse"
+                data-target="#primeiro-callapse-tutor" aria-expanded="true" aria-controls="collapseOne">
+                Roberto
+              </button>
+              <button type="button" class="btn btn-outline-warning btn-sm" id="atuTutor">
+                Atualizar
+              </button>
+              <button type="button" class="btn btn-outline-danger btn-sm" id="delTutor">
+                Deletar
+              </button>
+            </h5>
+          </div>
+
+          <div id="primeiro-callapse-tutor" class="collapse show" aria-labelledby="headingOne"
+            data-parent="#primeiro-tutor">
+            <div class="card-body">
+              <div class="p-3 px-md-4 mb-3">
+                <div>
+                  <h4>Dados tutor
+                    <img src="/images/mais.png" class="px-md-2 p-2" style="cursor: pointer;" onclick="">
+                  </h4>
+                </div>
+                <div>
+                  <dl>
+                    <dt>29/07/2021</dt>
+                    <dd>- Começou a trabalhar oficialmente na Lince Tech</dd>
+                    <dt>29/06/2021</dt>
+                    <dd>- Novo tutor: Ronaldo</dd>
+                    <dt>29/05/2021</dt>
+                    <dd>- Formado como cão emocional</dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--CADASTRO-->
+    <div class="tab-pane fade" id="nav-cadastro" role="tabpanel" aria-labelledby="nav-cadastro-tab">
+
+      <div class="accordion  form-cadastro-cao" id="cadastro-cao-colapse">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link nav-item-cor" type="button" data-toggle="collapse"
+                data-target="#collapse-cao-cadastro" aria-expanded="true" aria-controls="collapse-cao-cadastro">
+                Cadastro cao
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapse-cao-cadastro" class="collapse show" aria-labelledby="headingOne"
+            data-parent="#cadastro-cao-colapse">
+            <div class="card-body">
+              <form class="form-cadastro-cao" id="cadastro-cao" method="post">
                 <div class="form-group">
                   <label for="nome-cao">Nome do cão</label>
-                  <input type="text" class="form-control" id="nome-cao" >
+                  <input type="text" class="form-control" id="nome-cao">
                 </div>
                 <div class="form-group">
                   <label for="genero-cao">Gênero</label>
@@ -102,14 +174,73 @@
                 </div>
                 <div class="form-group">
                   <label for="data-cao">Data de nascimento</label>
-                  <input type="date" class="form-control" id="data-cao" >
+                  <input type="date" class="form-control" id="data-cao">
                 </div>
                 <input class="btn btn-lg btn-block btn-enviar" type="submit">
-            </form>
+              </form>
+            </div>
+          </div>
         </div>
+
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed nav-item-cor" type="button" data-toggle="collapse"
+                data-target="#collapse_tutor" aria-expanded="false" aria-controls="collapse_tutor">
+                Cadastro tutor
+              </button>
+            </h5>
+          </div>
+          <div id="collapse_tutor" class="collapse" aria-labelledby="headingTwo" data-parent="#cadastro-cao-colapse">
+            <div class="card-body">
+
+              <form class="form-cadastro-cao" id="cadastro-tutor" method="post">
+                <div class="form-group">
+                  <label for="nome-tutor">Nome completo</label>
+                  <input type="text" class="form-control" id="nome-tutor">
+                </div>
+                <div class="form-group">
+                  <label for="email-tutor">E-mail</label>
+                  <input type="email" class="form-control" id="email-tutor">
+                </div>
+                <div class="form-group">
+                  <label for="cpf-tutor">CPF</label>
+                  <input type="text" class="form-control" id="cpf-tutor">
+                </div>
+                <div class="form-group">
+                  <label for="genero-tutor">Gênero</label>
+                  <select class="form-control" id="genero-tutor">
+                    <option>Feminino</option>
+                    <option>Maculino</option>
+                    <option>Outro</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="telefone-tutor">Número de telefone</label>
+                  <input type="tel" class="form-control" id="telefone-tutor">
+                </div>
+                <div class="form-group">
+                  <label for="data-tutor">Data de nascimento</label>
+                  <input type="date" class="form-control" id="data-tutor">
+                </div>
+                <input class="btn btn-lg btn-block btn-enviar" type="submit">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
