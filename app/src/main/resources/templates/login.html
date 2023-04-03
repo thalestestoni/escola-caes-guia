@@ -15,7 +15,7 @@
         <div th:if="${param.logout}">
             Você foi desconectado
         </div>
-        <form th:action="@{/login}" method="post" th:object="${login}" class="form-signin">
+        <form th:action="@{/login}" method="post" class="form-signin">
             <div class="form-group text-center">
                 <a href="./home.html">
                     <img class="mb-4" src="/images/logo1.png" alt="">
@@ -23,11 +23,11 @@
             <!--<h1 class="h3 mb-3 font-weight-normal">Login</h1>-->
             </div>
             <div class="form-group">
-                <input type="email" th:field="*{email}" class="form-control" id="login" aria-describedby="login" placeholder="Login" required>
+                <input type="email" class="form-control" id="username" name="username" aria-describedby="login" placeholder="Login" required>
                 <small id="login" class="form-text text-muted">Nome de usuário ou endereço de e-mail</small>
             </div>
             <div class="form-group">
-                <input type="password" th:field="*{password}" class="form-control" id="senha" placeholder="Senha" required>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Senha" required>
                 </div>
             <div class="checkbox mb-3">
                 <label>

@@ -12,12 +12,12 @@ import hkeller.escolacaesguia.models.User;
 
 public class UserPrincipal implements UserDetails {
 
-    private String nome;
+    private String email;
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
 
     public UserPrincipal(User user) {
-        this.nome = user.getNome();
+        this.email = user.getEmail();
         this.password = user.getPassword();
         
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
@@ -37,7 +37,7 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public String getUsername() {
-        return nome;
+        return email;
     }
 
     @Override
@@ -59,5 +59,4 @@ public class UserPrincipal implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-    
 }
