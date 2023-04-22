@@ -3,15 +3,9 @@ CREATE TABLE "cao" (
   "nome" text NOT NULL,
   "cor" text NOT NULL,
   "data_nascimento" date NOT NULL,
-  "localizacao" point NOT NULL,
-  "id_genero" smallserial NOT NULL,
+  "genero" text NOT NULL,
   "created_at" timestamp DEFAULT (now()),
   "updated_at" timestamp DEFAULT (now())
-);
-
-CREATE TABLE "genero" (
-  "id" smallserial PRIMARY KEY,
-  "descricao" text NOT NULL
 );
 
 CREATE TABLE "plano_ensino" (
@@ -98,8 +92,6 @@ COMMENT ON TABLE "situacao_tutor_cao" IS 'Representa a situação atual da rela�
 COMMENT ON TABLE "evento" IS 'O campo "data" representa qual a data do evento, devendo o próprio usuário informá-la. Quando for exibido em formato de notificação para o tutor, basta buscar os eventos >= data atual. Quando for exibido em histórico basta buscar todos os eventos.';
 
 COMMENT ON TABLE "usuario" IS 'Email e cpf poderão ser utilizados como login, pois são chaves únicas.';
-
-ALTER TABLE "cao" ADD FOREIGN KEY ("id_genero") REFERENCES "genero" ("id");
 
 ALTER TABLE "plano_ensino" ADD FOREIGN KEY ("id_cao") REFERENCES "cao" ("id");
 
