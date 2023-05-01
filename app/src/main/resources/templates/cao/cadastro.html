@@ -12,7 +12,7 @@
 
   <main>
     <div class="container-sm">
-      <form method="post" th:action="@{/cao}" th:object="${cao}">
+      <form method="post" th:action="@{/cao/cadastrar}" th:object="${cao}" class="needs-validation" novalidate>
         <div class="mb-3">
           <label for="nome" class="form-label">Nome do cão</label>
           <input 
@@ -21,7 +21,11 @@
             id="nome"
             name="nome"
             th:field="*{nome}"
+            th:errorclass="is-invalid"
+            placeholder="Nome do cão"
+            required
           />
+          <div class="invalid-feedback" th:errors="*{nome}"></div>
         </div>
         <div class="mb-3">
           <label for="genero" class="form-label">Gênero do cão</label>
@@ -29,11 +33,15 @@
             class="form-select" 
             id="genero" 
             name="genero"
+            th:field="*{genero}"
+            th:errorclass="is-invalid"
+            required
           >
-            <option>Selecione</option>
+            <option value="">Selecione</option>
             <option value="Masculino">Masculino</option>
             <option value="Feminino">Feminino</option>
           </select>
+          <div class="invalid-feedback" th:errors="*{genero}"></div>
         </div>
         <div class="mb-3">
           <label for="cor" class="form-label">Cor do cão</label>
@@ -43,7 +51,10 @@
             id="cor"
             name="cor"
             th:field="*{cor}"
+            th:errorclass="is-invalid"
+            placeholder="Cor do cão"
           />
+          <div class="invalid-feedback" th:errors="*{cor}"></div>
         </div>
         <div class="mb-3">
           <label for="dataNascimento" class="form-label">Data de nascimento</label>
@@ -52,10 +63,13 @@
             class="form-control" 
             id="dataNascimento"
             name="dataNascimento"
-            th:field="*{dataNascimento}"  
+            th:field="*{dataNascimento}"
+            th:errorclass="is-invalid"
           />
+          <div class="invalid-feedback" th:errors="*{dataNascimento}">Oi</div>
         </div>
 
+        <button type="button" class="btn btn-secondary">Cancelar</button>
         <button type="submit" class="btn btn-primary">Cadastrar</button>
       </form>
     </div>
