@@ -117,8 +117,5 @@ CREATE UNIQUE INDEX unique_cpf_on_usuario ON usuario (cpf);
 -- ALTER TABLE "permissao_perfil" ADD FOREIGN KEY ("id_permissao") REFERENCES "permissao" ("id");
 
 -- Cargas iniciais
-insert into genero(descricao) values('Masculino');
-insert into genero(descricao) values('Feminino');
-
 insert into situacao_tutor_cao(descricao) values ('Ativo');
 insert into situacao_tutor_cao(descricao) values ('Inativo');
