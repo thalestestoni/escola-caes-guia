@@ -2,8 +2,11 @@ package hkeller.escolacaesguia.dtos;
 
 import java.sql.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public class CreateUserDto {
@@ -23,6 +26,8 @@ public class CreateUserDto {
     @Size(min = 8)
     private String password;
 
+    @NotNull
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dataNascimento;
 
     @NotBlank
