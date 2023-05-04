@@ -18,7 +18,7 @@ import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-@RequestMapping("/cao")
+@RequestMapping("/caes")
 public class CaoController {
     @Autowired
     CadastrarCaoServico cadastrarCaoServico;
@@ -27,7 +27,7 @@ public class CaoController {
     ObterListaCaesServico obterListaCaesServico;
 
     @GetMapping("cadastro")
-    public String formularioCadastro(Model model) {
+    public String getFormularioCadastro(Model model) {
         RequisicaoCadastroCaoDto cao = new RequisicaoCadastroCaoDto();
 
         model.addAttribute("cao", cao);
@@ -35,8 +35,8 @@ public class CaoController {
         return "cao/cadastro";
     }
 
-    @PostMapping("cadastrar")
-    public String cadastrar(@Valid @ModelAttribute("cao") RequisicaoCadastroCaoDto cao, BindingResult result, Model model) {
+    @PostMapping()
+    public String post(@Valid @ModelAttribute("cao") RequisicaoCadastroCaoDto cao, BindingResult result, Model model) {
         if (result.hasErrors()) {
             model.addAttribute("cao", cao);
 
@@ -45,11 +45,11 @@ public class CaoController {
 
         cadastrarCaoServico.executar(cao);
 
-        return "redirect:/cao/listagem";
+        return "redirect:/caes";
     }
     
-    @GetMapping("listagem")
-    public String listagem(HttpServletRequest request, Model model) {
+    @GetMapping()
+    public String get(HttpServletRequest request, Model model) {
         String baseUrl = ServletUriComponentsBuilder
             .fromRequestUri(request)
             .replacePath(null)

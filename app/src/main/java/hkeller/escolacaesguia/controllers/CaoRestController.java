@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
-@RequestMapping("caes")
+@RequestMapping("rest/caes")
 public class CaoRestController {
     @Autowired
     ObterListaCaesServico obterListaCaesServico;
