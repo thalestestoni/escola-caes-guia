@@ -12,7 +12,7 @@
   <div th:insert="fragments/header :: header"></div>
 
   <div class="container-sm" id="listagem-caes-container">
-    <table class="table table-hover">
+    <table class="table table-hover" hidden>
       <thead>
         <tr>
           <th scope="col">Nome do cão</th>
@@ -27,6 +27,8 @@
         <!-- Preenchido via javascript -->
       </tfoot>
     </table>
+
+    <div role="alert" hidden></div>
   </div>
 
   <input type="hidden" id="base-url" th:value="${baseUrl}">
