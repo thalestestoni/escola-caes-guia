@@ -6,6 +6,8 @@
   - [Perfil](#perfil)
   - [Permissão](#permissão)
   - [Permissão por perfil](#permissão-por-perfil)
+- [Infraestrutura](#infraestrutura)
+  - [Banco de dados](#banco-de-dados)
 
 ## 📍 Intro
 
@@ -160,3 +162,9 @@ Table permissao_perfil {
 | editar_evento | admin, funcionario |
 | visualizar_evento | admin, funcionario, tutor |
 | listar_eventos | admin, funcionario, tutor |
+
+## Infraestrutura
+Esta seção descreve os recursos de infraestrutura utilizados.
+
+### Banco de dados
+Foi escolhido o Postgres como SGBD (Sistema gerenciador de banco de dados), pois um dos requisitos do projeto era poder crescer sem necessidade de grandes investimentos. O Postgres é um projeto open source (código aberto), o que exclui a necessidade de pagamento por licenças de uso. É necessário somente custos com infraestrutura para alocar o SGBD.
