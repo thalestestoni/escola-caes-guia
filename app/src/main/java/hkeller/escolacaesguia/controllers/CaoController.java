@@ -36,7 +36,7 @@ public class CaoController {
     DeletarCaoServico deletarCaoServico;
 
     @Autowired
-    ObterCaoServico obterCaoPorIdServico;
+    ObterCaoServico obterCaoServico;
 
     @Autowired
     EditarCaoServico editarCaoServico;
@@ -85,7 +85,7 @@ public class CaoController {
 
     @GetMapping("{idCao}/editar")
     public String formEditar(@PathVariable("idCao") Long idCao, Model model) {
-        CaoDto caoDto = obterCaoPorIdServico.execute(idCao);
+        CaoDto caoDto = obterCaoServico.execute(idCao);
 
         model.addAttribute("cao", caoDto);
         
@@ -99,6 +99,15 @@ public class CaoController {
         editarCaoServico.execute(caoDto);
 
         return "redirect:/caes";
+    }
+
+    @GetMapping("{idCao}/visualizar")
+    public String visualizar(@PathVariable("idCao") Long idCao, Model model) {
+        CaoDto caoDto = obterCaoServico.execute(idCao);
+
+        model.addAttribute("cao", caoDto);
+
+        return "cao/visualizar";
     }
     
 }
