@@ -66,10 +66,10 @@
             th:field="*{dataNascimento}"
             th:errorclass="is-invalid"
           />
-          <div class="invalid-feedback" th:errors="*{dataNascimento}">Oi</div>
+          <div class="invalid-feedback" th:errors="*{dataNascimento}"></div>
         </div>
 
-        <button type="button" class="btn btn-secondary">Cancelar</button>
+        <a type="button" class="btn btn-secondary" th:href="@{/caes}">Cancelar</a>
         <button type="submit" class="btn btn-primary">Cadastrar</button>
       </form>
     </div>
