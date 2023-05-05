@@ -10,6 +10,8 @@ import lombok.Data;
 @Data
 @Builder
 public class CaoDto {
+    private Long id;
+    
     private String nome;
     
     private String cor;

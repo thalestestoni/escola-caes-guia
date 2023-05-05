@@ -19,12 +19,25 @@ public class CaoMapper {
         return cao;
     }
 
+    public static Cao mapToCao(CaoDto caoDto) {
+        Cao cao =  Cao.builder()
+            .id(caoDto.getId())
+            .nome(caoDto.getNome())
+            .cor(caoDto.getCor())
+            .dataNascimento(caoDto.getDataNascimento())
+            .genero(caoDto.getGenero())
+            .build();
+
+        return cao;
+    }
+
     public static List<CaoDto> mapToCaoDto(List<Cao> caes) {
         List<CaoDto> caesDto = new ArrayList<CaoDto>();
         
         for(Cao cao : caes) {
             caesDto.add(
                 CaoDto.builder()
+                    .id(cao.getId())
                     .nome(cao.getNome())
                     .cor(cao.getCor())
                     .dataNascimento(cao.getDataNascimento())
@@ -34,5 +47,17 @@ public class CaoMapper {
         };
 
         return caesDto;
+    }
+
+    public static CaoDto mapToCaoDto(Cao cao) {
+        CaoDto caoDto = CaoDto.builder()
+                            .id(cao.getId())
+                            .nome(cao.getNome())
+                            .cor(cao.getCor())
+                            .dataNascimento(cao.getDataNascimento())
+                            .genero(cao.getGenero())
+                            .build();
+
+        return caoDto;
     }
 }
