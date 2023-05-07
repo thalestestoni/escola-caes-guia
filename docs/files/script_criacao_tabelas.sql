@@ -3,15 +3,9 @@ CREATE TABLE "cao" (
   "nome" text NOT NULL,
   "cor" text NOT NULL,
   "data_nascimento" date NOT NULL,
-  "localizacao" point NOT NULL,
-  "id_genero" smallserial NOT NULL,
+  "genero" text NOT NULL,
   "created_at" timestamp DEFAULT (now()),
   "updated_at" timestamp DEFAULT (now())
-);
-
-CREATE TABLE "genero" (
-  "id" smallserial PRIMARY KEY,
-  "descricao" text NOT NULL
 );
 
 CREATE TABLE "plano_ensino" (
@@ -99,8 +93,6 @@ COMMENT ON TABLE "evento" IS 'O campo "data" representa qual a data do evento, d
 
 COMMENT ON TABLE "usuario" IS 'Email e cpf poderão ser utilizados como login, pois são chaves únicas.';
 
-ALTER TABLE "cao" ADD FOREIGN KEY ("id_genero") REFERENCES "genero" ("id");
-
 ALTER TABLE "plano_ensino" ADD FOREIGN KEY ("id_cao") REFERENCES "cao" ("id");
 
 ALTER TABLE "tutor_cao" ADD FOREIGN KEY ("id_cao") REFERENCES "cao" ("id");
@@ -125,8 +117,5 @@ CREATE UNIQUE INDEX unique_cpf_on_usuario ON usuario (cpf);
 -- ALTER TABLE "permissao_perfil" ADD FOREIGN KEY ("id_permissao") REFERENCES "permissao" ("id");
 
 -- Cargas iniciais
-insert into genero(descricao) values('Masculino');
-insert into genero(descricao) values('Feminino');
-
 insert into situacao_tutor_cao(descricao) values ('Ativo');
 insert into situacao_tutor_cao(descricao) values ('Inativo');
