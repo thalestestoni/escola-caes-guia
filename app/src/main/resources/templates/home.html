@@ -13,23 +13,7 @@
 </head>
 
 <body>
-  <nav>
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white">
-      <img class="my-0 mr-md-auto" src="/images/logo2.png" alt="">
-      <h4>
-        <a class="nav-item-cor my-0 mr-md-auto font-weight-normal" th:href="@{/logout}">Logout</a>
-      </h4>
-    </div>
-
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <a class="nav-item nav-link active nav-item-cor" id="nav-cao-tab" data-toggle="tab" href="#nav-cao" role="tab"
-        aria-controls="nav-cao" aria-selected="true">Cão</a>
-      <a class="nav-item nav-link nav-item-cor" id="nav-tutor-tab" data-toggle="tab" href="#nav-tutor" role="tab"
-        aria-controls="nav-tutor" aria-selected="false">Tutor</a>
-      <a class="nav-item nav-link nav-item-cor" id="nav-cadastro-tab" data-toggle="tab" href="#nav-cadastro" role="tab"
-        aria-controls="nav-cadastro" aria-selected="false">Cadastros</a>
-    </div>
-  </nav>
+  <div th:insert="fragments/header :: header"></div>
   <div class="tab-content" id="nav-tabContent">
 
     <!--CAO-->
