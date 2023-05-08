@@ -12,9 +12,9 @@
 
   <main>
     <div class="container-sm p-3">
-      <h1>Edição de tutor</h1>
+      <h1>Editar tutor</h1>
       
-      <form th:object="${tutor}" class="needs-validation" novalidate>
+      <form method="post" th:action="@{/tutores/{idTutor}/editar(idTutor=${tutor.id})}" th:object="${tutor}" class="needs-validation" novalidate>
         <div class="mb-3">
           <label for="nome" class="form-label">Nome completo</label>
           <input 
@@ -23,7 +23,9 @@
             id="nome"
             name="nome"
             th:field="*{nome}"
-            readonly
+            th:errorclass="is-invalid"
+            placeholder="Nome completo do tutor"
+            required
           />
           <div class="invalid-feedback" th:errors="*{nome}"></div>
         </div>
@@ -35,6 +37,9 @@
             id="email"
             name="email"
             th:field="*{email}"
+            th:errorclass="is-invalid"
+            placeholder="Email do tutor"
+            required
             readonly
           />
           <div class="invalid-feedback" th:errors="*{email}"></div>
@@ -47,7 +52,9 @@
             id="cpf"
             name="cpf"
             th:field="*{cpf}"
-            readonly
+            th:errorclass="is-invalid"
+            placeholder="CPF do tutor"
+            required
           />
           <div class="invalid-feedback" th:errors="*{cpf}"></div>
         </div>
@@ -59,7 +66,9 @@
             id="dataNascimento"
             name="dataNascimento"
             th:field="*{dataNascimento}"
-            readonly
+            th:errorclass="is-invalid"
+            placeholder="Data de nascimento do tutor"
+            required
           />
           <div class="invalid-feedback" th:errors="*{dataNascimento}"></div>
         </div>
@@ -71,7 +80,9 @@
             id="telefoneCelular"
             name="telefoneCelular"
             th:field="*{telefoneCelular}"
-            readonly
+            th:errorclass="is-invalid"
+            placeholder="Telefone celular do tutor"
+            required
           />
           <div class="invalid-feedback" th:errors="*{telefoneCelular}"></div>
         </div>
@@ -83,12 +94,15 @@
             id="telefoneFixo"
             name="telefoneFixo"
             th:field="*{telefoneFixo}"
-            readonly
+            th:errorclass="is-invalid"
+            placeholder="Telefone fixo do tutor"
+            required
           />
           <div class="invalid-feedback" th:errors="*{telefoneFixo}"></div>
         </div>
 
-        <a type="button" class="btn btn-secondary" th:href="@{/tutores}">Voltar</a>
+        <a type="button" class="btn btn-secondary" th:href="@{/tutores}">Cancelar</a>
+        <button type="submit" class="btn btn-primary">Salvar</button>
       </form>
     </div>
   </main>

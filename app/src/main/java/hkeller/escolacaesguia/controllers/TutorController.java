@@ -12,8 +12,11 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import hkeller.escolacaesguia.dtos.CadastroTutorDto;
 import hkeller.escolacaesguia.dtos.UsuarioDto;
+import hkeller.escolacaesguia.models.User;
 import hkeller.escolacaesguia.services.CadastrarTutorServico;
+import hkeller.escolacaesguia.services.EditarTutorServico;
 import hkeller.escolacaesguia.services.ObterTutorServico;
+import hkeller.escolacaesguia.services.ObterUsuarioServico;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 
@@ -27,6 +30,9 @@ public class TutorController {
 
     @Autowired
     ObterTutorServico obterTutorServico;
+
+    @Autowired
+    EditarTutorServico editarTutorServico;
 
 
     @GetMapping("cadastro")
@@ -71,5 +77,14 @@ public class TutorController {
         model.addAttribute("tutor", tutorDto);
         
         return "tutor/editar";
+    }
+
+    @PostMapping("{idTutor}/editar")
+    public String editar(@PathVariable("idTutor") Long idTutor, @ModelAttribute("tutor") UsuarioDto tutorDto) {
+        tutorDto.setId(idTutor);
+
+        editarTutorServico.execute(tutorDto);
+
+        return "redirect:/tutores";
     }
 }
