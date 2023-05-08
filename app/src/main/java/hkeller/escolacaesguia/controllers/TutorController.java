@@ -7,9 +7,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import hkeller.escolacaesguia.dtos.CadastroTutorDto;
 import hkeller.escolacaesguia.services.CadastrarTutorServico;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,7 +45,15 @@ public class TutorController {
     }
 
     @GetMapping()
-    public String get() {
+    public String get(HttpServletRequest request, Model model) {
+        String baseUrl = ServletUriComponentsBuilder
+        .fromRequestUri(request)
+        .replacePath(null)
+        .build()
+        .toUriString();
+
+        model.addAttribute("baseUrl", baseUrl);
+
         return "tutor/listagem";
     }
 }

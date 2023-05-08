@@ -21,6 +21,6 @@ public class CaoRestController {
     @GetMapping()
     public Page<Cao> get(@RequestParam("page") Integer page, @RequestParam("size") Integer size) {
         return obterListaCaesServico.execute(page, size);
-        //TODO: Retornar um Page de CaoDto
+        //TODO: Retornar um Page de TutorDto
     }
 }
