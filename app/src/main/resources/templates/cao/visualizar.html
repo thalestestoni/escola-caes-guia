@@ -11,7 +11,9 @@
   <div th:insert="fragments/header :: header"></div>
 
   <main>
-    <div class="container-sm">
+    <h1>Dados do cão</h1>
+    
+    <div class="container-sm p-3">
       <form th:object="${cao}">
         <div class="mb-3">
           <label for="nome" class="form-label">Nome do cão</label>
