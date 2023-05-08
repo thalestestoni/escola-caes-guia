@@ -24,8 +24,8 @@ public class CreateUserDto {
     @Size(max = 11)
     private String cpf;
 
-    @NotBlank
-    @Size(min = 8)
+    // @NotBlank
+    // @Size(min = 8)
     private String password;
 
     @NotNull(message = "Por favor informe a data de nascimento")
