@@ -87,4 +87,13 @@ public class TutorController {
 
         return "redirect:/tutores";
     }
+
+    @GetMapping("{idTutor}/visualizar")
+    public String visualizar(@PathVariable("idTutor") Long idTutor, Model model) {
+        UsuarioDto tutorDto = obterTutorServico.execute(idTutor);
+
+        model.addAttribute("tutor", tutorDto);
+
+        return "tutor/visualizar";
+    }
 }
