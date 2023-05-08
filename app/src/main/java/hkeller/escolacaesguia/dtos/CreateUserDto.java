@@ -1,6 +1,6 @@
 package hkeller.escolacaesguia.dtos;
 
-import java.sql.Date;
+import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -8,17 +8,19 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.Data;
 
+@Data
 public class CreateUserDto {
     
-    @NotBlank
+    @NotBlank(message = "Por favor informe o nome")
     private String nome;
 
-    @NotBlank
+    @NotBlank(message = "Por favor informe o email")
     @Email
     private String email;
 
-    @NotBlank
+    @NotBlank(message = "Por favor informe o CPF")
     @Size(max = 11)
     private String cpf;
 
@@ -26,83 +28,14 @@ public class CreateUserDto {
     @Size(min = 8)
     private String password;
 
-    @NotNull
+    @NotNull(message = "Por favor informe a data de nascimento")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dataNascimento;
 
-    @NotBlank
+    @NotBlank(message = "Por favor informe o telefone celular")
     private String telefoneCelular;
 
     private String telefoneFixo;
 
     private boolean ativo;
-
-
-    public String getNome() {
-        return this.nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEmail() {
-        return this.email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getCpf() {
-        return this.cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getPassword() {
-        return this.password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Date getDataNascimento() {
-        return this.dataNascimento;
-    }
-
-    public void setDataNascimento(Date dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
-
-    public String getTelefoneCelular() {
-        return this.telefoneCelular;
-    }
-
-    public void setTelefoneCelular(String telefoneCelular) {
-        this.telefoneCelular = telefoneCelular;
-    }
-
-    public String getTelefoneFixo() {
-        return this.telefoneFixo;
-    }
-
-    public void setTelefoneFixo(String telefoneFixo) {
-        this.telefoneFixo = telefoneFixo;
-    }
-
-    public boolean isAtivo() {
-        return this.ativo;
-    }
-
-    public boolean getAtivo() {
-        return this.ativo;
-    }
-
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
-    }
 }

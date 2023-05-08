@@ -1,5 +1,6 @@
 package hkeller.escolacaesguia.mapper;
 
+import hkeller.escolacaesguia.dtos.CadastroTutorDto;
 import hkeller.escolacaesguia.dtos.UsuarioDto;
 import hkeller.escolacaesguia.models.User;
 
@@ -15,5 +16,19 @@ public class UsuarioMapper {
             .build();
 
         return usuarioDto;
+    }
+
+    public static User mapToUsuario(CadastroTutorDto cadastroTutorDto) {
+        User usuario = User.builder()
+            .nome(cadastroTutorDto.getNome())
+            .email(cadastroTutorDto.getEmail())
+            .cpf(cadastroTutorDto.getCpf())
+            .password(cadastroTutorDto.getPassword())
+            .dataNascimento(cadastroTutorDto.getDataNascimento())
+            .telefoneCelular(cadastroTutorDto.getTelefoneCelular())
+            .telefoneFixo(cadastroTutorDto.getTelefoneFixo())
+            .build();
+
+        return usuario;
     }
 }
