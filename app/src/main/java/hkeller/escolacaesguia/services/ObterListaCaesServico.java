@@ -3,6 +3,7 @@ package hkeller.escolacaesguia.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import hkeller.escolacaesguia.models.Cao;
@@ -14,7 +15,7 @@ public class ObterListaCaesServico {
     CaoRepositorio caoRepositorio;
 
     public Page<Cao> execute(Integer page, Integer size) {
-        Page<Cao> caes = caoRepositorio.findAll(PageRequest.of(page, size));
+        Page<Cao> caes = caoRepositorio.findAll(PageRequest.of(page, size, Sort.by("id").descending()));
 
         return caes;
     }
