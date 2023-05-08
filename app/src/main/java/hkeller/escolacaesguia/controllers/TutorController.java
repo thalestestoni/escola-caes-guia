@@ -14,6 +14,7 @@ import hkeller.escolacaesguia.dtos.CadastroTutorDto;
 import hkeller.escolacaesguia.dtos.UsuarioDto;
 import hkeller.escolacaesguia.models.User;
 import hkeller.escolacaesguia.services.CadastrarTutorServico;
+import hkeller.escolacaesguia.services.DeletarTutorServico;
 import hkeller.escolacaesguia.services.EditarTutorServico;
 import hkeller.escolacaesguia.services.ObterTutorServico;
 import hkeller.escolacaesguia.services.ObterUsuarioServico;
@@ -33,6 +34,9 @@ public class TutorController {
 
     @Autowired
     EditarTutorServico editarTutorServico;
+
+    @Autowired
+    DeletarTutorServico deletarTutorServico;
 
 
     @GetMapping("cadastro")
@@ -95,5 +99,12 @@ public class TutorController {
         model.addAttribute("tutor", tutorDto);
 
         return "tutor/visualizar";
+    }
+
+    @GetMapping("{idTutor}/deletar")
+    public String delete(@PathVariable("idTutor") Long idTutor) {
+        deletarTutorServico.execute(idTutor);
+
+        return "redirect:/tutores";
     }
 }
