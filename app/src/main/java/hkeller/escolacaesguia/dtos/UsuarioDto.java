@@ -2,7 +2,6 @@ package hkeller.escolacaesguia.dtos;
 
 import java.util.Date;
 
-import org.checkerframework.common.value.qual.BoolVal;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Builder;
