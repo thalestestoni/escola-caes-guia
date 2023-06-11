@@ -26,6 +26,6 @@ public class RequisicaoCadastroCaoDto {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dataNascimento;
     
-    @NotEmpty(message = "Por favor informe o gênero")
-    private String genero;
+    @NotEmpty(message = "Por favor informe o sexo")
+    private String sexo;
 }

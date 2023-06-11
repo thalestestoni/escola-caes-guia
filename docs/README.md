@@ -26,14 +26,9 @@ Table cao {
   cor varchar [not null]
   data_nascimento date [not null]
   localizacao point [not null]
-  id_genero varchar [not null, ref: > genero.id]
+  sexo varchar [not null]
   created_at timestamp [default: `now()`]
   updated_at timestamp [default: `now()`]
-}
-
-Table genero {
-  id bit [pk,increment]
-  descricao varchar [not null]
 }
 
 Table plano_ensino {

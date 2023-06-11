@@ -29,20 +29,20 @@
           <div class="invalid-feedback" th:errors="*{nome}"></div>
         </div>
         <div class="mb-3">
-          <label for="genero" class="form-label">Gênero do cão</label>
+          <label for="sexo" class="form-label">Sexo do cão</label>
           <select 
             class="form-select" 
-            id="genero" 
-            name="genero"
-            th:field="*{genero}"
+            id="sexo" 
+            name="sexo"
+            th:field="*{sexo}"
             th:errorclass="is-invalid"
             required
           >
             <option value="">Selecione</option>
-            <option value="Masculino">Masculino</option>
-            <option value="Feminino">Feminino</option>
+            <option value="Macho">Macho</option>
+            <option value="Fêmea">Fêmea</option>
           </select>
-          <div class="invalid-feedback" th:errors="*{genero}"></div>
+          <div class="invalid-feedback" th:errors="*{sexo}"></div>
         </div>
         <div class="mb-3">
           <label for="cor" class="form-label">Cor do cão</label>

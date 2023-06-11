@@ -19,5 +19,5 @@ public class CaoDto {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dataNascimento;
     
-    private String genero;
+    private String sexo;
 }

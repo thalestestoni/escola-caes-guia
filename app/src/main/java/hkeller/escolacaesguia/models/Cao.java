@@ -38,5 +38,5 @@ public class Cao implements Serializable {
     private Date dataNascimento;
 
     @Column
-    private String genero;
+    private String sexo;
 }

@@ -13,7 +13,7 @@ public class CaoMapper {
             .nome(caoDto.getNome())
             .cor(caoDto.getCor())
             .dataNascimento(caoDto.getDataNascimento())
-            .genero(caoDto.getGenero())
+            .sexo(caoDto.getSexo())
             .build();
 
         return cao;
@@ -25,7 +25,7 @@ public class CaoMapper {
             .nome(caoDto.getNome())
             .cor(caoDto.getCor())
             .dataNascimento(caoDto.getDataNascimento())
-            .genero(caoDto.getGenero())
+            .sexo(caoDto.getSexo())
             .build();
 
         return cao;
@@ -41,7 +41,7 @@ public class CaoMapper {
                     .nome(cao.getNome())
                     .cor(cao.getCor())
                     .dataNascimento(cao.getDataNascimento())
-                    .genero(cao.getGenero())
+                    .sexo(cao.getSexo())
                     .build()
             );
         };
@@ -55,7 +55,7 @@ public class CaoMapper {
                             .nome(cao.getNome())
                             .cor(cao.getCor())
                             .dataNascimento(cao.getDataNascimento())
-                            .genero(cao.getGenero())
+                            .sexo(cao.getSexo())
                             .build();
 
         return caoDto;

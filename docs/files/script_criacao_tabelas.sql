@@ -3,7 +3,7 @@ CREATE TABLE "cao" (
   "nome" text NOT NULL,
   "cor" text NOT NULL,
   "data_nascimento" date NOT NULL,
-  "genero" text NOT NULL,
+  "sexo" text NOT NULL,
   "created_at" timestamp DEFAULT (now()),
   "updated_at" timestamp DEFAULT (now())
 );
