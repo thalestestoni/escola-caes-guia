@@ -11,7 +11,9 @@
   <div th:insert="fragments/header :: header"></div>
 
   <main>
-    <div class="container-sm">
+    <div class="container-sm p-3">
+      <h1>Cadastro de cão</h1>
+      
       <form method="post" th:action="@{/caes}" th:object="${cao}" class="needs-validation" novalidate>
         <div class="mb-3">
           <label for="nome" class="form-label">Nome do cão</label>

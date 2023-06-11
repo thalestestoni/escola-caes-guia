@@ -11,66 +11,73 @@
   <div th:insert="fragments/header :: header"></div>
 
   <main>
-    <div class="container-sm">
-        <h1>Perfil</h1>
+    <div class="container-sm p-3">
+        <section>
+          <h1>Perfil</h1>
 
-        <form th:object="${usuario}">
-            <div class="mb-3">
-              <label for="nome" class="form-label">Nome</label>
-              <input 
-                type="text"
-                class="form-control"
-                id="nome"
-                name="nome"
-                th:field="*{nome}"
-                readonly
-              />
-            </div>
-            <div class="mb-3">
-              <label for="cor" class="form-label">Email</label>
-              <input 
-                type="email" 
-                class="form-control"
-                id="email"
-                name="email"
-                th:field="*{email}"
-                readonly
-              />
-            </div>
-            <div class="mb-3">
-                <label for="cor" class="form-label">CPF</label>
+          <form th:object="${usuario}">
+              <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
                 <input 
-                type="text" 
-                class="form-control"
-                id="cpf"
-                name="cpf"
-                th:field="*{cpf}"
-                readonly
-                />
-            </div>
-            <div class="mb-3">
-                <label for="cor" class="form-label">Data nascimento</label>
-                <input 
-                  type="text" 
+                  type="text"
                   class="form-control"
-                  id="dataNascimento"
-                  name="dataNascimento"
-                  th:field="*{dataNascimento}"
+                  id="nome"
+                  name="nome"
+                  th:field="*{nome}"
                   readonly
                 />
-            </div>
-            <div class="mb-3">
-                <label for="cor" class="form-label">Telefone celular</label>
+              </div>
+              <div class="mb-3">
+                <label for="cor" class="form-label">Email</label>
                 <input 
-                  type="text" 
+                  type="email" 
                   class="form-control"
-                  id="telefoneCelular"
-                  name="telefoneCelular"
-                  th:field="*{telefoneCelular}"
+                  id="email"
+                  name="email"
+                  th:field="*{email}"
                   readonly
                 />
-            </div>
-        </form>
+              </div>
+              <div class="mb-3">
+                  <label for="cor" class="form-label">CPF</label>
+                  <input 
+                  type="text" 
+                  class="form-control"
+                  id="cpf"
+                  name="cpf"
+                  th:field="*{cpf}"
+                  readonly
+                  />
+              </div>
+              <div class="mb-3">
+                  <label for="cor" class="form-label">Data nascimento</label>
+                  <input 
+                    type="text" 
+                    class="form-control"
+                    id="dataNascimento"
+                    name="dataNascimento"
+                    th:field="*{dataNascimento}"
+                    readonly
+                  />
+              </div>
+              <div class="mb-3">
+                  <label for="cor" class="form-label">Telefone celular</label>
+                  <input 
+                    type="text" 
+                    class="form-control"
+                    id="telefoneCelular"
+                    name="telefoneCelular"
+                    th:field="*{telefoneCelular}"
+                    readonly
+                  />
+              </div>
+          </form>
+        </section>
+        <section>
+          <h1>Alteração de senha</h1>
+          
+          <a th:href="@{alterar-senha}">Alterar senha</a>
+        </section>
     </div>
   </main>
 

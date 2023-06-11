@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RequisicaoCadastroCaoDto {
-    @NotEmpty(message = "Por favor informe um nome")
+    @NotEmpty(message = "Por favor informe o nome")
     private String nome;
     
     @NotEmpty(message = "Por favor informe a cor")
