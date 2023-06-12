@@ -11,9 +11,9 @@
   <div th:insert="fragments/header :: header"></div>
 
   <main>
-    <h1>Dados do cão</h1>
-    
     <div class="container-sm p-3">
+      <h1>Dados do cão</h1>
+      
       <form th:object="${cao}">
         <div class="mb-3">
           <label for="nome" class="form-label">Nome do cão</label>
@@ -28,19 +28,38 @@
           />
         </div>
         <div class="mb-3">
-          <label for="sexo" class="form-label">Sexo do cão</label>
-          <select 
-            class="form-select" 
-            id="sexo" 
-            name="sexo"
-            th:field="*{sexo}"
-            readonly
-            disabled
-          >
-            <option value="">Selecione</option>
-            <option value="Macho">Macho</option>
-            <option value="Fêmea">Fêmea</option>
-          </select>
+          <div class="form-check form-check-inline">
+            <input 
+              class="form-check-input" 
+              type="radio" 
+              name="sexo" 
+              id="macho" 
+              th:field="*{sexo}" 
+              th:value="Macho"
+              th:checked="${sexo == 'Macho'}"
+              readonly
+              disabled
+            />
+            <label class="form-check-label" for="macho">
+              Macho
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input 
+              class="form-check-input"
+              type="radio" 
+              name="sexo" 
+              id="femea"
+              th:field="*{sexo}" 
+              th:value="Fêmea"
+              th:checked="${sexo == 'Fêmea'}"
+              readonly
+              disabled
+            />
+            <label class="form-check-label" for="femea">
+              Fêmea
+            </label>
+          </div>
         </div>
         <div class="mb-3">
           <label for="cor" class="form-label">Cor do cão</label>
