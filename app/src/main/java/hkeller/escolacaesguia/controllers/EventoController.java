@@ -9,16 +9,18 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import hkeller.escolacaesguia.dtos.CaoDto;
 import hkeller.escolacaesguia.dtos.RequisicaoCadastroEventoDto;
 import hkeller.escolacaesguia.services.CadastrarEventoServico;
 import hkeller.escolacaesguia.services.ObterCaoServico;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("/caes/{idCao}/eventos")
-public class EventosController {
+public class EventoController {
     @Autowired
     ObterCaoServico obterCaoServico;
 
@@ -35,10 +37,18 @@ public class EventosController {
     }
 
     @GetMapping()
-    public String eventos(@PathVariable("idCao") Long idCao, Model model) {
+    public String eventos(@PathVariable("idCao") Long idCao, HttpServletRequest request, Model model) {
         CaoDto caoDto = obterCaoServico.execute(idCao);
-
+        
         model.addAttribute("cao", caoDto);
+
+        String baseUrl = ServletUriComponentsBuilder
+            .fromRequestUri(request)
+            .replacePath(null)
+            .build()
+            .toUriString();
+
+        model.addAttribute("baseUrl", baseUrl);
 
         return "evento/listagem";
     }
