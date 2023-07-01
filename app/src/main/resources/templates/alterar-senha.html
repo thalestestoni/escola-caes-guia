@@ -62,8 +62,9 @@
               />
               <div class="invalid-feedback" th:errors="*{confirmacaoSenhaNova}"></div>
           </div>
-
-            <button class="btn btn-primary" type="submit">Alterar senha</button>
+  
+          <a type="button" class="btn btn-secondary" th:href="@{/users/perfil}">Cancelar</a>
+          <button class="btn btn-primary" type="submit">Alterar senha</button>
         </form>
     </div>
   </main>
