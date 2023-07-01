@@ -56,7 +56,7 @@ Table situacao_tutor_cao {
 
 Table evento {
   id bigint [pk,increment]
-  id_evento bigint [not null, ref: > tipo_evento.id]
+  titulo varchar [not null]
   descricao varchar [not null]
   data datetime [not null]
   notificar_tutor bit [not null, default: 0]
@@ -65,11 +65,6 @@ Table evento {
   updated_at timestamp [default: `now()`]
   
   Note: 'O campo "data" representa qual a data do evento, devendo o próprio usuário informá-la. Quando for exibido em formato de notificação para o tutor, basta buscar os eventos >= data atual. Quando for exibido em histórico basta buscar todos os eventos.'
-}
-
-Table tipo_evento {
-  id bigint [pk,increment]
-  descricao varchar [not null]
 }
 
 Table usuario {
