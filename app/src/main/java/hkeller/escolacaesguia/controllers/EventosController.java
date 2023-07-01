@@ -45,8 +45,8 @@ public class EventosController {
 
     @PostMapping()
     public String post(
-        @Valid @ModelAttribute("evento") RequisicaoCadastroEventoDto evento,
         @PathVariable("idCao") Long idCao,
+        @Valid @ModelAttribute("evento") RequisicaoCadastroEventoDto evento,
         BindingResult result, 
         Model model) 
     {

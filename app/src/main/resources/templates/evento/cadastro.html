@@ -14,7 +14,13 @@
     <div class="container-sm p-3">
       <h1>Cadastro de eventos - !NOME DO CÃO!</h1>
       
-      <form method="post" th:action="@{/caes/{idCao}/eventos(idCao=${evento.idCao})}" th:object="${evento}" class="needs-validation" novalidate>
+      <form 
+        method="post"
+        th:action="@{/caes/{idCao}/eventos(idCao=${evento.idCao})}"
+        th:object="${evento}"
+        class="needs-validation"
+        novalidate
+      >
         <div class="mb-3">
           <label for="nome" class="form-label">Título</label>
           <input 
