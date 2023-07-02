@@ -1,18 +1,18 @@
-<nav th:fragment="header" class="navbar navbar-expand navbar-light bg-light">
+<nav th:fragment="header" class="navbar navbar-expand navbar-light bg-light py-3">
   <div class="container-md">
     <div class="mx-auto d-flex align-items-center">
       <a th:href="@{/home}" class="navbar-brand">
         <img src="/images/cao-guia.svg" alt="Logo cão guia" width="40" height="40">
       </a>
-      <ul class="navbar-nav fw-medium fs-5">
+      <ul class="navbar-nav fw-medium">
         <li class="nav-item">
           <a th:href="@{/home}" class="nav-link">Home</a>
         </li>
         <li class="nav-item">
-          <a th:href="@{/tutores}" class="nav-link">Tutores</a>
+          <a th:href="@{/tutores}" class="nav-link ms-2">Tutores</a>
         </li>
         <li class="nav-item">
-          <a th:href="@{/caes}" class="nav-link">Cães</a>
+          <a th:href="@{/caes}" class="nav-link ms-2">Cães</a>
         </li>
       </ul>
     </div>
