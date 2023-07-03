@@ -7,6 +7,7 @@ A idéia deste sistema surgiu a partir de um levantamento dos alunos do curso de
 O sistema desenvolvido serve para gerenciar o cadastro e histórico dos cães guias treinados na [Escola de cães-guias HKeller](https://caoguia.org.br/).
 
 Apresentação do sistema:
+
 [![Assistir vídeo](https://img.youtube.com/vi/j_MylO3vgak/default.jpg)](https://youtu.be/j_MylO3vgak)
 
 ## 🐕‍🦺 Escola de cães-guia HKeller
