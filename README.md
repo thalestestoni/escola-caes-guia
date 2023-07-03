@@ -6,6 +6,9 @@ A idéia deste sistema surgiu a partir de um levantamento dos alunos do curso de
 
 O sistema desenvolvido serve para gerenciar o cadastro e histórico dos cães guias treinados na [Escola de cães-guias HKeller](https://caoguia.org.br/).
 
+Apresentação do sistema:
+[![Assistir vídeo](https://img.youtube.com/vi/j_MylO3vgak/default.jpg)](https://youtu.be/j_MylO3vgak)
+
 ## 🐕‍🦺 Escola de cães-guia HKeller
 
 Um cão-guia é um tipo de cão de assistência. É um animal adestrado para guiar pessoas cegas ou com deficiência visual grave, ou auxiliá-los nas tarefas caseiras, em trajetos com obstáculos, e muito mais.
