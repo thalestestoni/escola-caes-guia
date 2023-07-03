@@ -11,61 +11,63 @@
   <div th:insert="fragments/header :: header"></div>
 
   <main>
-    <div class="container-sm p-3">
-        <form th:method="POST" th:action="@{/users/alterar-senha}" th:object="${senha}" class="needs-validation" novalidate>
-          
-          <div th:if="${#fields.hasErrors('*')}" class="invalid-feedback">
-            <ul>
-              <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
-            </ul>
-          </div>
+    <div class="container-sm py-4">
+      <h1 class="mb-3">Alteração de senha</h1>
 
+      <form th:method="POST" th:action="@{/users/alterar-senha}" th:object="${senha}" class="needs-validation" novalidate>
+
+        <div th:if="${#fields.hasErrors('*')}" class="invalid-feedback">
+          <ul>
+            <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+          </ul>
+        </div>
+
+        <div class="mb-3">
+              <label for="senhaAtual" class="form-label">Senha atual</label>
+              <input
+                type="password"
+                class="form-control"
+                id="senhaAtual"
+                name="senhaAtual"
+                th:field="*{senhaAtual}"
+                th:errorclass="is-invalid"
+                placeholder="Senha atual"
+                required
+              />
+              <div class="invalid-feedback" th:errors="*{senhaAtual}"></div>
+          </div>
           <div class="mb-3">
-                <label for="senhaAtual" class="form-label">Senha atual</label>
-                <input 
-                  type="password" 
-                  class="form-control" 
-                  id="senhaAtual"
-                  name="senhaAtual"
-                  th:field="*{senhaAtual}"
-                  th:errorclass="is-invalid"
-                  placeholder="Senha atual"
-                  required
-                />
-                <div class="invalid-feedback" th:errors="*{senhaAtual}"></div>
-            </div>
-            <div class="mb-3">
-                <label for="senhaAtual" class="form-label">Senha nova</label>
-                <input 
-                  type="password" 
-                  class="form-control" 
-                  id="senhaNova"
-                  name="senhaNova"
-                  th:field="*{senhaNova}"
-                  th:errorclass="is-invalid"
-                  placeholder="Senha nova"
-                  required
-                />
-                <div class="invalid-feedback" th:errors="*{senhaNova}"></div>
-            </div>
-            <div class="mb-3">
-              <label for="senhaAtual" class="form-label">Confirmar senha nova</label>
-              <input 
-                type="password" 
-                class="form-control" 
-                id="confirmacaoSenhaNova"
-                name="confirmacaoSenhaNova"
-                th:field="*{confirmacaoSenhaNova}"
+              <label for="senhaAtual" class="form-label">Senha nova</label>
+              <input
+                type="password"
+                class="form-control"
+                id="senhaNova"
+                name="senhaNova"
+                th:field="*{senhaNova}"
                 th:errorclass="is-invalid"
                 placeholder="Senha nova"
                 required
               />
-              <div class="invalid-feedback" th:errors="*{confirmacaoSenhaNova}"></div>
+              <div class="invalid-feedback" th:errors="*{senhaNova}"></div>
           </div>
-  
-          <a type="button" class="btn btn-secondary" th:href="@{/users/perfil}">Cancelar</a>
-          <button class="btn btn-primary" type="submit">Alterar senha</button>
-        </form>
+          <div class="mb-3">
+            <label for="senhaAtual" class="form-label">Confirmar senha nova</label>
+            <input
+              type="password"
+              class="form-control"
+              id="confirmacaoSenhaNova"
+              name="confirmacaoSenhaNova"
+              th:field="*{confirmacaoSenhaNova}"
+              th:errorclass="is-invalid"
+              placeholder="Senha nova"
+              required
+            />
+            <div class="invalid-feedback" th:errors="*{confirmacaoSenhaNova}"></div>
+        </div>
+
+        <a type="button" class="btn btn-secondary" th:href="@{/users/perfil}">Cancelar</a>
+        <button class="btn btn-primary" type="submit">Alterar senha</button>
+      </form>
     </div>
   </main>
 

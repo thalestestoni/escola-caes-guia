@@ -11,15 +11,15 @@
   <div th:insert="fragments/header :: header"></div>
 
   <main>
-    <div class="container-sm p-3">
-      <h1>Editar tutor</h1>
-      
+    <div class="container-sm py-4">
+      <h1 class="mb-3">Editar tutor</h1>
+
       <form method="post" th:action="@{/tutores/{idTutor}/editar(idTutor=${tutor.id})}" th:object="${tutor}" class="needs-validation" novalidate>
         <div class="mb-3">
           <label for="nome" class="form-label">Nome completo</label>
-          <input 
-            type="text" 
-            class="form-control" 
+          <input
+            type="text"
+            class="form-control"
             id="nome"
             name="nome"
             th:field="*{nome}"
@@ -31,9 +31,9 @@
         </div>
         <div class="mb-3">
           <label for="nome" class="form-label">Email</label>
-          <input 
-            type="email" 
-            class="form-control" 
+          <input
+            type="email"
+            class="form-control"
             id="email"
             name="email"
             th:field="*{email}"
@@ -46,9 +46,9 @@
         </div>
         <div class="mb-3">
           <label for="nome" class="form-label">CPF</label>
-          <input 
-            type="text" 
-            class="form-control" 
+          <input
+            type="text"
+            class="form-control"
             id="cpf"
             name="cpf"
             th:field="*{cpf}"
@@ -60,9 +60,9 @@
         </div>
         <div class="mb-3">
           <label for="nome" class="form-label">Data nascimento</label>
-          <input 
-            type="date" 
-            class="form-control" 
+          <input
+            type="date"
+            class="form-control"
             id="dataNascimento"
             name="dataNascimento"
             th:field="*{dataNascimento}"
@@ -74,9 +74,9 @@
         </div>
         <div class="mb-3">
           <label for="nome" class="form-label">Telefone celular</label>
-          <input 
-            type="number" 
-            class="form-control" 
+          <input
+            type="number"
+            class="form-control"
             id="telefoneCelular"
             name="telefoneCelular"
             th:field="*{telefoneCelular}"
@@ -88,9 +88,9 @@
         </div>
         <div class="mb-3">
           <label for="nome" class="form-label">Telefone fixo</label>
-          <input 
-            type="number" 
-            class="form-control" 
+          <input
+            type="number"
+            class="form-control"
             id="telefoneFixo"
             name="telefoneFixo"
             th:field="*{telefoneFixo}"

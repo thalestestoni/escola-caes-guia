@@ -11,14 +11,14 @@
   <div th:insert="fragments/header :: header"></div>
 
   <main>
-    <div class="container-sm p-3">
-        <section>
-          <h1>Perfil</h1>
+    <div class="container-sm py-3">
+        <section class="mb-5">
+          <h1 class="mb-3">Perfil</h1>
 
           <form th:object="${usuario}">
               <div class="mb-3">
                 <label for="nome" class="form-label">Nome</label>
-                <input 
+                <input
                   type="text"
                   class="form-control"
                   id="nome"
@@ -29,8 +29,8 @@
               </div>
               <div class="mb-3">
                 <label for="cor" class="form-label">Email</label>
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   class="form-control"
                   id="email"
                   name="email"
@@ -40,8 +40,8 @@
               </div>
               <div class="mb-3">
                   <label for="cor" class="form-label">CPF</label>
-                  <input 
-                  type="text" 
+                  <input
+                  type="text"
                   class="form-control"
                   id="cpf"
                   name="cpf"
@@ -51,8 +51,8 @@
               </div>
               <div class="mb-3">
                   <label for="cor" class="form-label">Data nascimento</label>
-                  <input 
-                    type="date" 
+                  <input
+                    type="date"
                     class="form-control"
                     id="dataNascimento"
                     name="dataNascimento"
@@ -62,8 +62,8 @@
               </div>
               <div class="mb-3">
                   <label for="cor" class="form-label">Telefone celular</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     class="form-control"
                     id="telefoneCelular"
                     name="telefoneCelular"
@@ -74,8 +74,8 @@
           </form>
         </section>
         <section>
-          <h1>Alteração de senha</h1>
-          
+          <h1 class="mb-3">Alteração de senha</h1>
+
           <a th:href="@{alterar-senha}">Alterar senha</a>
         </section>
     </div>
