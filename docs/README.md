@@ -1,6 +1,7 @@
 ## Sumário
 - [Sumário](#sumário)
 - [📍 Intro](#-intro)
+- [� Manual do usuário](#-manual-do-usuário)
 - [💾 Modelo de banco de dados](#-modelo-de-banco-de-dados)
 - [🔐 Controle de acesso de usuário (ACL - User access control list)](#-controle-de-acesso-de-usuário-acl---user-access-control-list)
   - [Perfil](#perfil)
@@ -12,6 +13,10 @@
 ## 📍 Intro
 
 Neste documento encontra-se todos os arquivos pertinentes a documentação do projeto [Escola de cães-guia HKeller](../README.md)
+
+## 📕 Manual do usuário
+
+Dentro da pasta files encontra-se o pdf do [manual do usuário](./files/Manual%20do%20Usuario%20-%20Escola%20de%20caes%20guia%20Helen%20Keller.pdf).
 
 ## 💾 Modelo de banco de dados
 
