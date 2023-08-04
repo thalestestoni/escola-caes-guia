@@ -57,3 +57,12 @@ docker run postgres
 Utilize um administrador de banco de dados como [dbeaver](https://dbeaver.io/download/) ou o próprio [pgAdmin](https://www.pgadmin.org/) para se conectar ao banco de dados e executar os scripts sql.
 
 Execute os comandos do [script de criação das tabelas](../docs/files/script_criacao_tabelas.sql) no software escolhido para se conectar ao banco.
+
+
+### Rodando a aplicação
+
+Abra o terminal na pasta [app](./) e execute o comando
+
+```shell
+./gradlew bootRun
+```
