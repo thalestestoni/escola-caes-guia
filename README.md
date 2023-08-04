@@ -1,6 +1,6 @@
 ## 📍 Intro
 
-Este projeto faz parte do trabalho de conclusão de curso de Análise e Desenvolvimento de Sistemas (ADS) do Instituto Federal de Santa Catarina (IFSC) e é desenvolvido por [Thales Flores Testoni](https://www.linkedin.com/in/thalestestoni/) e [Nicole Alice Vieira](https://www.linkedin.com/in/nicole-alice-vieira-4aa1bb187/).
+Este projeto faz parte do trabalho de conclusão de curso de Análise e Desenvolvimento de Sistemas (ADS) do Instituto Federal de Santa Catarina (IFSC).
 
 A idéia deste sistema surgiu a partir de um levantamento dos alunos do curso de Análise e Desenvolvimento de Sistemas (ADS) do Instituto Federal de Santan Catarina (IFSC) sobre as demandas de sistemas na sociedade.
 
