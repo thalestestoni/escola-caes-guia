@@ -1,7 +1,7 @@
 ## Sumário
 - [Sumário](#sumário)
 - [📍 Intro](#-intro)
-- [� Manual do usuário](#-manual-do-usuário)
+- [📕 Manual do usuário](#-manual-do-usuário)
 - [💾 Modelo de banco de dados](#-modelo-de-banco-de-dados)
 - [🔐 Controle de acesso de usuário (ACL - User access control list)](#-controle-de-acesso-de-usuário-acl---user-access-control-list)
   - [Perfil](#perfil)
@@ -111,6 +111,46 @@ Table permissao {
 Table permissao_perfil {
   id_perfil int [pk, ref: > perfil.id]
   id_permissao int [pk, ref: > permissao.id]
+}
+
+Table form_cadastro_inicial_socializador {
+  id bigint [pk, increment]
+  email varchar [not null]
+  nome_completo varchar [not null]
+  data_nascimento date [not null]
+  rg varchar [not null]
+  orgao_emissor varchar [not null]
+  cpf varchar [not null]
+  endereco varchar [not null]
+  telefone_celular varchar [not null]
+  telefone_fixo varchar
+  grau_instrucao enum_grau_instrucao [not null]
+  profissao varchar [not null]
+  local_trabalho varchar [not null]
+  estuda boolean [not null]
+  local_estudo varchar [not null]
+  estado_civil enum_estado_civil [not null]
+}
+
+Enum enum_grau_instrucao {
+  nao_alfabetizado
+  ensino_fundamental_incompleto
+  ensino_fundamental_completo
+  ensino_medio_incompleto
+  ensino_medio_completo
+  graduacao_incompleta
+  graduacao_completa
+  pos_graduacao
+  mestrado_ou_doutorado_incompleto
+  mestrado_ou_douturado_completo
+}
+
+Enum enum_estado_civil {
+  solteiro
+  uniao_estavel
+  casado
+  divorciado
+  viuvo
 }
 ```
 
