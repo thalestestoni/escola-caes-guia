@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <form action="/enviar" method="post">
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="nome">Nome completo</label>
+          <input type="text" class="form-control" id="nome" name="nome" required>
+        </div>
+        <div class="form-group">
+          <label for="dataNascimento">Data de nascimento</label>
+          <input type="date" class="form-control" id="dataNascimento" name="dataNascimento" required>
+        </div>
+        <div class="form-group">
+          <label for="rg">RG e órgão emissor</label>
+          <input type="text" class="form-control" id="rg" name="rg" required>
+        </div>
+        <div class="form-group">
+          <label for="cpf">CPF</label>
+          <input type="text" class="form-control" id="cpf" name="cpf" required>
+        </div>
+        <div class="form-group">
+          <label for="endereco">Endereço completo</label>
+          <input type="text" class="form-control" id="endereco" name="endereco" required>
+        </div>
+        <div class="form-group">
+          <label for="celular">Celular</label>
+          <input type="text" class="form-control" id="celular" name="celular" required>
+        </div>
+        <div class="form-group">
+          <label for="telefone">Telefone fixo (opcional)</label>
+          <input type="text" class="form-control" id="telefone" name="telefone">
+        </div>
+        <div class="form-group">
+          <label for="grauInstrucao">Grau de instrução</label>
+          <select class="form-control" id="grauInstrucao" name="grauInstrucao">
+            <option value="">Selecione</option>
+            <option value="Não alfabetizado">Não alfabetizado</option>
+            <option value="Ensino fundamental incompleto">Ensino fundamental incompleto</option>
+            <option value="Ensino fundamental completo">Ensino fundamental completo</option>
+            <option value="Ensino médio incompleto">Ensino médio incompleto</option>
+            <option value="Ensino médio completo">Ensino médio completo</option>
+            <option value="Graduação incompleta">Graduação incompleta</option>
+            <option value="Graduação completa">Graduação completa</option>
+            <option value="Pós graduação">Pós graduação</option>
+            <option value="Mestrado ou doutorado incompleto">Mestrado ou doutorado incompleto</option>
+            <option value="Mestrado ou doutorado completo">Mestrado ou doutorado completo</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="profissao">Profissão</label>
+          <input type="text" class="form-control" id="profissao" name="profissao" required>
+        </div>
+        <div class="form-group">
+          <label for="localTrabalho">Local de trabalho</label>
+          <input type="text" class="form-control" id="localTrabalho" name="localTrabalho">
+        </div>
+        <div class="form-group">
+          <label for="estuda">Estuda?</label>
+          <select class="form-control" id="estuda" name="estuda">
+            <option value="">Selecione</option>
+            <option value="Sim">Sim</option>
+            <option value="Não">Não</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="localEstudo">Local de estudo</label>
+          <input type="text" class="form-control" id="localEstudo" name="localEstudo">
+        </div>
+        <div class="form-group">
+          <label for="estadoCivil">Estado civil</label>
+          <select class="form-control" id="estadoCivil" name="estadoCivil">
+            <option value="">Selecione</option>
+            <option value="Solteiro">Solteiro</option>
+            <option value="União estável">União estável</option>
+            <option value="Casado">Casado</option>
+            <option value="Divorciado">Divorciado</option>
+            <option value="Viúvo">Viúvo</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </body>
+</html>

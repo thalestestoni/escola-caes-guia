@@ -1,0 +1,110 @@
+@startuml
+
+!define TABLE_BORDER_STYLE single
+
+entity "cao" {
+  + id: bigint <<PK>>
+  nome: text
+  cor: text
+  data_nascimento: date
+  sexo: text
+  created_at: timestamp
+  updated_at: timestamp
+}
+
+entity "plano_ensino" {
+  + id_cao: bigint <<PK, FK>>
+  descricao: text
+}
+
+entity "tutor_cao" {
+  + id: bigint <<PK>>
+  id_cao: bigint <<FK>>
+  id_usuario: bigint <<FK>>
+  id_situacao_tutor_cao: smallserial <<FK>>
+  created_at: timestamp
+  updated_at: timestamp
+}
+
+entity "situacao_tutor_cao" {
+  + id: smallserial <<PK>>
+  descricao: text
+}
+
+entity "evento" {
+  + id: bigint <<PK>>
+  titulo: text
+  descricao: text
+  data: timestamp
+  notificar_tutor: boolean
+  id_cao: smallserial <<FK>>
+  created_at: timestamp
+  updated_at: timestamp
+}
+
+entity "pessoa" {
+  + id: bigint <<PK>>
+  nome: text
+  data_nascimento: date
+  cpf: character(11)
+  telefone_celular: text
+  telefone_fixo: text
+  created_at: timestamp
+  updated_at: timestamp
+}
+
+entity "usuario" {
+  + id: bigint <<PK>>
+  id_pessoa: bigint <<FK, UK>>
+  email: text <<UK>>
+  password: text
+  ativo: boolean
+  created_at: timestamp
+  updated_at: timestamp
+}
+
+entity "form_cadastro_inicial_socializador" {
+  + id: bigint <<PK>>
+  id_pessoa: bigint <<FK, UK>>
+  email: text
+  rg: text
+  orgao_emissor: text
+  endereco: text
+  grau_instrucao: enum_grau_instrucao
+  profissao: text
+  local_trabalho: text
+  estuda: boolean
+  local_estudo: text
+  estado_civil: enum_estado_civil
+}
+
+enum "enum_grau_instrucao" {
+  nao_alfabetizado
+  ensino_fundamental_incompleto
+  ensino_fundamental_completo
+  ensino_medio_incompleto
+  ensino_medio_completo
+  graduacao_incompleta
+  graducao_completa
+  pos_graduacao
+  mestrado_ou_doutorado_incompleto
+  mestrado_ou_douturado_completo
+}
+
+enum "enum_estado_civil" {
+  solteiro
+  uniao_estavel
+  casado
+  divorciado
+  viuvo
+}
+
+pessoa --|> usuario
+pessoa --|> form_cadastro_inicial_socializador
+tutor_cao --|> situacao_tutor_cao
+usuario --|> tutor_cao
+cao --|> tutor_cao
+cao --|> evento
+cao --|> plano_ensino
+
+@enduml
