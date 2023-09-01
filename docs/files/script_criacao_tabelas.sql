@@ -172,7 +172,33 @@ CREATE UNIQUE INDEX unique_cpf_on_usuario ON usuario (cpf);
 -- ALTER TABLE "permissao_perfil" ADD FOREIGN KEY ("id_permissao") REFERENCES "permissao" ("id");
 
 -- Cargas iniciais
-insert into situacao_tutor_cao(descricao)
-values ('Ativo');
-insert into situacao_tutor_cao(descricao)
-values ('Inativo');
+insert into situacao_tutor_cao(descricao) values ('Ativo');
+insert into situacao_tutor_cao(descricao) values ('Inativo');
+
+-- Primeiro, certifique-se de que o módulo pgcrypto esteja disponível
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
+-- Agora, insira o usuário com senha criptografada
+INSERT INTO "usuario" (
+  "nome", 
+  "email", 
+  "cpf", 
+  "password", 
+  "data_nascimento", 
+  "telefone_celular", 
+  "telefone_fixo", 
+  "ativo"
+) 
+VALUES (
+  'Administrador',
+  'admin@example.com',
+  '12345678901',
+  crypt('senha123', gen_salt('bf')),
+  '2000-01-01',
+  '(11) 98765-4321',
+  '(11) 1234-5678',
+  TRUE
+);
+
+-- Para logar no sistema, utilizar o login "admin@example.com" e senha "senha123"
+
