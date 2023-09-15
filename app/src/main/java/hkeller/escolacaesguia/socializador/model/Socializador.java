@@ -4,10 +4,13 @@ import hkeller.escolacaesguia.pessoa.Pessoa;
 import hkeller.escolacaesguia.socializador.enums.EnumEstadoCivil;
 import hkeller.escolacaesguia.socializador.enums.EnumGrauInstrucao;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 
-
+@Setter
+@Getter
 @Entity
 @Table(name = "socializador")
 public class Socializador implements Serializable {
