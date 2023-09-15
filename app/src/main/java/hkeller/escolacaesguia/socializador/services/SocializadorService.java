@@ -1,14 +1,13 @@
 package hkeller.escolacaesguia.socializador.services;
 
-import hkeller.escolacaesguia.common.interfaces.IInsertPersistencePort;
-import hkeller.escolacaesguia.common.interfaces.IGetPersistencePort;
-import hkeller.escolacaesguia.common.interfaces.IUpdatePersistencePort;
 import hkeller.escolacaesguia.socializador.model.Socializador;
 import hkeller.escolacaesguia.socializador.repository.SocializadorRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
-public class SocializadorService implements IInsertPersistencePort<Socializador>, IUpdatePersistencePort<Socializador>, IGetPersistencePort<Socializador> {
+public class SocializadorService {
 
   private final SocializadorRepository socializadorRepository;
 
@@ -16,18 +15,15 @@ public class SocializadorService implements IInsertPersistencePort<Socializador>
     this.socializadorRepository = socializadorRepository;
   }
 
-  @Override
   public void insert(Socializador entity) {
     socializadorRepository.save(entity);
   }
 
-  @Override
   public void update(Socializador entity) {
     socializadorRepository.save(entity);
   }
-
-  @Override
   public Socializador get(long id) {
-    return socializadorRepository.findById(id).get();
+    Optional<Socializador> socializador = socializadorRepository.findById(id);
+    return socializador.orElse(null);
   }
 }

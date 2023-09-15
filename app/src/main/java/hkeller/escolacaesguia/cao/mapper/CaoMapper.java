@@ -1,11 +1,11 @@
 package hkeller.escolacaesguia.cao.mapper;
 
+import hkeller.escolacaesguia.cao.dto.CaoDto;
+import hkeller.escolacaesguia.cao.dto.RequisicaoCadastroCaoDto;
+import hkeller.escolacaesguia.cao.model.Cao;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import hkeller.escolacaesguia.cao.dto.CaoDto;
-import hkeller.escolacaesguia.cao.model.Cao;
-import hkeller.escolacaesguia.cao.dto.RequisicaoCadastroCaoDto;
 
 public class CaoMapper {
     public static Cao mapToCao(RequisicaoCadastroCaoDto caoDto) {

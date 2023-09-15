@@ -1,30 +1,21 @@
 package hkeller.escolacaesguia.user.controller;
 
+import hkeller.escolacaesguia.common.excptionhandler.exception.SenhaIncorretaError;
+import hkeller.escolacaesguia.common.security.SecurityUtil;
+import hkeller.escolacaesguia.user.dtos.AlteracaoSenhaDto;
+import hkeller.escolacaesguia.user.dtos.CreateUserDto;
+import hkeller.escolacaesguia.user.dtos.UsuarioDto;
 import hkeller.escolacaesguia.user.models.User;
+import hkeller.escolacaesguia.user.services.*;
+import hkeller.escolacaesguia.user.validators.AlteracaoSenhaUsuarioValidator;
+import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import hkeller.escolacaesguia.user.dtos.AlteracaoSenhaDto;
-import hkeller.escolacaesguia.user.dtos.CreateUserDto;
-import hkeller.escolacaesguia.user.dtos.UsuarioDto;
-import hkeller.escolacaesguia.common.excptionhandler.exception.SenhaIncorretaError;
-import hkeller.escolacaesguia.common.security.SecurityUtil;
-import hkeller.escolacaesguia.user.services.AlterarSenhaUsuarioServico;
-import hkeller.escolacaesguia.user.services.CreateUserRoleService;
-import hkeller.escolacaesguia.user.services.CreateUserService;
-import hkeller.escolacaesguia.user.services.GetAllUsersService;
-import hkeller.escolacaesguia.user.services.ObterUsuarioPorEmailServico;
-import hkeller.escolacaesguia.user.validators.AlteracaoSenhaUsuarioValidator;
-import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/users")

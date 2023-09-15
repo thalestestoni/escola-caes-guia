@@ -1,9 +1,8 @@
 package hkeller.escolacaesguia.tutor.services;
 
+import hkeller.escolacaesguia.user.dtos.UsuarioDto;
 import hkeller.escolacaesguia.user.models.User;
 import hkeller.escolacaesguia.user.repositories.UserRepository;
-import hkeller.escolacaesguia.user.dtos.UsuarioDto;
-
 import hkeller.escolacaesguia.user.services.ObterUsuarioServico;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

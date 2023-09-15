@@ -1,20 +1,27 @@
 package hkeller.escolacaesguia.socializador.controller;
 
-import hkeller.escolacaesguia.common.interfaces.IInsertPersistencePort;
-import hkeller.escolacaesguia.socializador.model.Socializador;
+import hkeller.escolacaesguia.socializador.dto.SocializadorDto;
 import hkeller.escolacaesguia.socializador.services.SocializadorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.Mapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/socializador")
 public class SocializadorController {
 
   @Autowired
-  private IInsertPersistencePort<Socializador> insertPersistencePort;
+  private SocializadorService socializadorService;
 
+  @GetMapping("/cadastrar")
+  public String cadastrar(Model model){
+    SocializadorDto socializador = new SocializadorDto();
+    model.addAttribute("socializador", socializador);
 
+    return "socializador/cadastro";
+  }
 
 }

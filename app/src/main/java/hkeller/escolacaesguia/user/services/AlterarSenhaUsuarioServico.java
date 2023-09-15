@@ -1,14 +1,13 @@
 package hkeller.escolacaesguia.user.services;
 
+import hkeller.escolacaesguia.common.excptionhandler.exception.SenhaIncorretaError;
+import hkeller.escolacaesguia.user.dtos.AlteracaoSenhaDto;
 import hkeller.escolacaesguia.user.models.User;
 import hkeller.escolacaesguia.user.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import hkeller.escolacaesguia.user.dtos.AlteracaoSenhaDto;
-import hkeller.escolacaesguia.common.excptionhandler.exception.SenhaIncorretaError;
 
 @Service
 public class AlterarSenhaUsuarioServico {
