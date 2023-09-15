@@ -1,18 +1,10 @@
 package hkeller.escolacaesguia.socializador.services;
 
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
 import hkeller.escolacaesguia.common.mapper.GenericMapper;
 import hkeller.escolacaesguia.pessoa.PessoaDto;
 import hkeller.escolacaesguia.socializador.dto.SocializadorDto;
 import hkeller.escolacaesguia.socializador.model.Socializador;
 import hkeller.escolacaesguia.socializador.repository.SocializadorRepository;
-
-import java.time.LocalDate;
-import java.time.ZoneOffset;
-import java.util.Date;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
@@ -20,6 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import java.time.LocalDate;
+import java.time.ZoneOffset;
+import java.util.Date;
+
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @ContextConfiguration(classes = {SocializadorService.class})
 @ExtendWith(SpringExtension.class)

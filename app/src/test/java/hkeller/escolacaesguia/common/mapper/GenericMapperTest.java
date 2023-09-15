@@ -4,7 +4,6 @@ import hkeller.escolacaesguia.pessoa.Pessoa;
 import hkeller.escolacaesguia.pessoa.PessoaDto;
 import hkeller.escolacaesguia.socializador.dto.SocializadorDto;
 import hkeller.escolacaesguia.socializador.model.Socializador;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ContextConfiguration(classes = {GenericMapper.class})
 @ExtendWith(SpringExtension.class)

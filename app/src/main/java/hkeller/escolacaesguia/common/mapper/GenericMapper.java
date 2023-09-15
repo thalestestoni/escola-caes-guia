@@ -1,8 +1,6 @@
 package hkeller.escolacaesguia.common.mapper;
 
-import jakarta.persistence.Entity;
 import org.springframework.beans.BeanUtils;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -3,7 +3,6 @@ package hkeller.escolacaesguia.socializador.dto;
 import hkeller.escolacaesguia.pessoa.PessoaDto;
 import hkeller.escolacaesguia.socializador.enums.EnumEstadoCivil;
 import hkeller.escolacaesguia.socializador.enums.EnumGrauInstrucao;
-import hkeller.escolacaesguia.socializador.model.Socializador;
 import lombok.Getter;
 import lombok.Setter;
 
