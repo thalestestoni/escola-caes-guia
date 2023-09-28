@@ -1,11 +1,11 @@
 package hkeller.escolacaesguia.user.services;
 
-import java.util.List;
-
 import hkeller.escolacaesguia.user.models.User;
 import hkeller.escolacaesguia.user.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class GetAllUsersService {

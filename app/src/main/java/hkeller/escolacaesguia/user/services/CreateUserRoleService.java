@@ -1,17 +1,16 @@
 package hkeller.escolacaesguia.user.services;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
+import hkeller.escolacaesguia.user.dtos.CreateUserRoleDto;
 import hkeller.escolacaesguia.user.models.Role;
 import hkeller.escolacaesguia.user.models.User;
 import hkeller.escolacaesguia.user.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import hkeller.escolacaesguia.user.dtos.CreateUserRoleDto;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class CreateUserRoleService {

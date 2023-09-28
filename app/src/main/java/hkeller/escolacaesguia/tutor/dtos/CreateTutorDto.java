@@ -1,11 +1,10 @@
 package hkeller.escolacaesguia.tutor.dtos;
 
-import java.time.LocalDateTime;
-
+import jakarta.validation.constraints.NotBlank;
 import org.hibernate.cfg.Environment;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import jakarta.validation.constraints.NotBlank;
+import java.time.LocalDateTime;
 
 public class CreateTutorDto {
     @Autowired

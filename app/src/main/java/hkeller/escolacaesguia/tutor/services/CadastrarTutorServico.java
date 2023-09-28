@@ -1,13 +1,11 @@
 package hkeller.escolacaesguia.tutor.services;
 
-import hkeller.escolacaesguia.user.services.CreateUserService;
 import hkeller.escolacaesguia.tutor.dtos.CadastroTutorDto;
 import hkeller.escolacaesguia.user.mapper.UsuarioMapper;
 import hkeller.escolacaesguia.user.models.User;
+import hkeller.escolacaesguia.user.services.CreateUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import static hkeller.escolacaesguia.user.mapper.UsuarioMapper.mapToUsuario;
 
 @Service
 public class CadastrarTutorServico {

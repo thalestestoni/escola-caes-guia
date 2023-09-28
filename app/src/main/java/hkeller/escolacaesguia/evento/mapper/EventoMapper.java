@@ -1,7 +1,7 @@
 package hkeller.escolacaesguia.evento.mapper;
 
-import hkeller.escolacaesguia.evento.model.Evento;
 import hkeller.escolacaesguia.evento.dto.RequisicaoCadastroEventoDto;
+import hkeller.escolacaesguia.evento.model.Evento;
 
 public class EventoMapper {
     public static Evento mapToEvento(RequisicaoCadastroEventoDto eventoDto) {

@@ -1,8 +1,8 @@
 package hkeller.escolacaesguia.user.mapper;
 
-import hkeller.escolacaesguia.user.models.User;
 import hkeller.escolacaesguia.tutor.dtos.CadastroTutorDto;
 import hkeller.escolacaesguia.user.dtos.UsuarioDto;
+import hkeller.escolacaesguia.user.models.User;
 
 public class UsuarioMapper {
     public static UsuarioDto mapToUsuarioDto(User user) {

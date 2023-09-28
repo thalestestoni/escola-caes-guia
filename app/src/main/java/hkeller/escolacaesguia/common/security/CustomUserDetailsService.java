@@ -1,13 +1,12 @@
 package hkeller.escolacaesguia.common.security;
 
+import hkeller.escolacaesguia.user.models.User;
+import hkeller.escolacaesguia.user.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import hkeller.escolacaesguia.user.models.User;
-import hkeller.escolacaesguia.user.repositories.UserRepository;
 
 @Service
 public class CustomUserDetailsService implements  UserDetailsService {

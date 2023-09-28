@@ -1,28 +1,34 @@
 package hkeller.escolacaesguia.socializador.model;
 
-import hkeller.escolacaesguia.common.abstracts.AbstractPessoa;
+import hkeller.escolacaesguia.pessoa.Pessoa;
 import hkeller.escolacaesguia.socializador.enums.EnumEstadoCivil;
 import hkeller.escolacaesguia.socializador.enums.EnumGrauInstrucao;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 
+@Setter
+@Getter
 @Entity
-@Table(name = "form_cadastro_inicial_socializador")
+@Table(name = "socializador")
 public class Socializador implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(name = "id_pessoa")
-  private Long idPessoa;
-
+  @Column(nullable = false)
   private String email;
-  private String rg;
-  private String orgaoEmissor;
-  private String endereco;
 
+  @Column(nullable = false)
+  private String rg;
+
+  @Column(name = "orgao_emissor", nullable = false)
+  private String orgaoEmissor;
+
+  private String endereco;
   @Enumerated(EnumType.STRING)
   @Column(name = "grau_instrucao")
   private EnumGrauInstrucao grauInstrucao;
@@ -38,4 +44,9 @@ public class Socializador implements Serializable {
   @Enumerated(EnumType.STRING)
   @Column(name = "estado_civil")
   private EnumEstadoCivil estadoCivil;
+
+  @OneToOne(optional = false, orphanRemoval = true)
+  @JoinColumn(name = "id_pessoa", nullable = false)
+  private Pessoa pessoa;
+
 }

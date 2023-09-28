@@ -1,9 +1,8 @@
 package hkeller.escolacaesguia.user.validators;
 
+import hkeller.escolacaesguia.user.dtos.AlteracaoSenhaDto;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
-
-import hkeller.escolacaesguia.user.dtos.AlteracaoSenhaDto;
 
 // https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/validation.html
 public class AlteracaoSenhaUsuarioValidator implements Validator {

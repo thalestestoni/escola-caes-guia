@@ -1,11 +1,10 @@
 package hkeller.escolacaesguia.user.dtos;
 
-import java.util.Date;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
 import lombok.Builder;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 @Data
 @Builder
