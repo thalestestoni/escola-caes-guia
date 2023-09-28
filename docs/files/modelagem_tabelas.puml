@@ -78,6 +78,27 @@ entity "form_cadastro_inicial_socializador" {
   estado_civil: enum_estado_civil
 }
 
+entity "estado" {
+  id: int <<PK>>
+  nome: text
+  sigla: text
+}
+
+entity "cidade" {
+  id: int <<PK>>
+  id_estado: int <<FK>>
+  nome: text
+}
+
+entity "endereco" {
+  cep: int <<PK>>
+  id_cidade: <<FK>>
+  id_estado: <<FK>>
+  logradouro: text
+  + numero: text
+  bairro: text,
+}
+
 enum "enum_grau_instrucao" {
   nao_alfabetizado
   ensino_fundamental_incompleto
@@ -106,5 +127,7 @@ usuario --|> tutor_cao
 cao --|> tutor_cao
 cao --|> evento
 cao --|> plano_ensino
+estado ||--|{ cidade
+cidade ||--|{ endereco
 
 @enduml
