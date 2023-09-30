@@ -185,7 +185,7 @@ ALTER TABLE "evento"
     ADD FOREIGN KEY ("id_cao") REFERENCES "cao" ("id");
 
 CREATE UNIQUE INDEX unique_email_on_usuario ON usuario (lower(email));
-CREATE UNIQUE INDEX unique_cpf_on_usuario ON usuario (cpf);
+CREATE UNIQUE INDEX unique_cpf_on_usuario ON pessoa (cpf);
 
 -- ALTER TABLE "perfil_usuario" ADD FOREIGN KEY ("id_usuario") REFERENCES "usuario" ("id");
 
@@ -203,26 +203,26 @@ insert into situacao_tutor_cao(descricao) values ('Inativo');
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 -- Agora, insira o usuário com senha criptografada
-INSERT INTO "usuario" (
-  "nome", 
-  "email", 
-  "cpf", 
-  "password", 
-  "data_nascimento", 
-  "telefone_celular", 
-  "telefone_fixo", 
-  "ativo"
-) 
-VALUES (
-  'Administrador',
-  'admin@example.com',
-  '12345678901',
-  crypt('senha123', gen_salt('bf')),
-  '2000-01-01',
-  '(11) 98765-4321',
-  '(11) 1234-5678',
-  TRUE
-);
+do $$
+    declare
+        id_pessoa_administrador pessoa.id%TYPE;
+    begin
+        INSERT INTO "pessoa" (
+            "nome",
+            "cpf",
+            "data_nascimento",
+            "telefone_celular"
+        )
+        VALUES (
+           'Administrador',
+           '12345678901',
+           '2000-01-01',
+           '(11) 98765-4321'
+       ) returning id into id_pessoa_administrador;
+
+        INSERT INTO "usuario" (id_pessoa, email, password)
+        VALUES (id_pessoa_administrador, 'admin@example.com', crypt('senha123', gen_salt('bf')));
+    end $$
 
 -- Para logar no sistema, utilizar o login "admin@example.com" e senha "senha123"
 
