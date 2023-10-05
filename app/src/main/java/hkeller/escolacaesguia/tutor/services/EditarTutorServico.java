@@ -18,11 +18,11 @@ public class EditarTutorServico {
     public void execute(UsuarioDto usuarioDto) {
         User usuario = obterUsuarioServico.execute(usuarioDto.getId());
 
-        usuario.setNome(usuarioDto.getNome());
-        usuario.setCpf(usuarioDto.getCpf());
-        usuario.setDataNascimento(usuarioDto.getDataNascimento());
-        usuario.setTelefoneCelular(usuarioDto.getTelefoneCelular());
-        usuario.setTelefoneFixo(usuarioDto.getTelefoneFixo());
+        usuario.getPessoa().setNome(usuarioDto.getNome());
+        usuario.getPessoa().setCpf(usuarioDto.getCpf());
+        usuario.getPessoa().setDataNascimento(usuarioDto.getDataNascimento());
+        usuario.getPessoa().setTelefoneCelular(usuarioDto.getTelefoneCelular());
+        usuario.getPessoa().setTelefoneFixo(usuarioDto.getTelefoneFixo());
 
         usuarioRepositorio.save(usuario);
     }
