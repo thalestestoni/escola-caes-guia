@@ -3,7 +3,7 @@ package hkeller.escolacaesguia.socializador.services;
 import hkeller.escolacaesguia.common.mapper.GenericMapper;
 import hkeller.escolacaesguia.pessoa.PessoaDto;
 import hkeller.escolacaesguia.socializador.dto.SocializadorDto;
-import hkeller.escolacaesguia.socializador.model.Socializador;
+import hkeller.escolacaesguia.socializador.entity.SocializadorEntity;
 import hkeller.escolacaesguia.socializador.repository.SocializadorRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -22,9 +22,9 @@ import static org.mockito.Mockito.when;
 
 @ContextConfiguration(classes = {SocializadorService.class})
 @ExtendWith(SpringExtension.class)
-class SocializadorServiceTest {
+class SocializadorEntityServiceTest {
     @MockBean
-    private GenericMapper<Socializador, SocializadorDto> genericMapper;
+    private GenericMapper<SocializadorEntity, SocializadorDto> genericMapper;
 
     @MockBean
     private SocializadorRepository socializadorRepository;
@@ -35,7 +35,7 @@ class SocializadorServiceTest {
     @Test
     void testInsert() {
 
-        when(socializadorRepository.save(Mockito.<Socializador>any())).thenReturn(new Socializador());
+        when(socializadorRepository.save(Mockito.<SocializadorEntity>any())).thenReturn(new SocializadorEntity());
 
         PessoaDto pessoa = new PessoaDto();
         pessoa.setCpf("12345678910");
@@ -55,8 +55,8 @@ class SocializadorServiceTest {
         dto.setProfissao("Profissao");
         dto.setRg("123456789");
         socializadorService.insert(dto);
-        verify(genericMapper).toEntity(Mockito.<SocializadorDto>any(), Mockito.<Class<Socializador>>any());
-        verify(socializadorRepository).save(Mockito.<Socializador>any());
+        verify(genericMapper).toEntity(Mockito.<SocializadorDto>any(), Mockito.<Class<SocializadorEntity>>any());
+        verify(socializadorRepository).save(Mockito.<SocializadorEntity>any());
     }
 }
 

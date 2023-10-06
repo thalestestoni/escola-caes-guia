@@ -16,6 +16,8 @@ public class SocializadorController {
   @Autowired
   private SocializadorService socializadorService;
 
+
+
   @GetMapping("/cadastrar")
   public String cadastrar(Model model){
     SocializadorDto socializador = new SocializadorDto();
@@ -25,6 +27,7 @@ public class SocializadorController {
 
   @PostMapping("/salvar")
   public String salvar(SocializadorDto socializadorDto){
+
     socializadorService.insert(socializadorDto);
     return "redirect:/socializador/cadastrar";
   }

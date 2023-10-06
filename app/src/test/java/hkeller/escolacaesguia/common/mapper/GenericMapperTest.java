@@ -1,9 +1,9 @@
 package hkeller.escolacaesguia.common.mapper;
 
-import hkeller.escolacaesguia.pessoa.Pessoa;
+import hkeller.escolacaesguia.pessoa.PessoaEntity;
 import hkeller.escolacaesguia.pessoa.PessoaDto;
 import hkeller.escolacaesguia.socializador.dto.SocializadorDto;
-import hkeller.escolacaesguia.socializador.model.Socializador;
+import hkeller.escolacaesguia.socializador.entity.SocializadorEntity;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +16,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @ExtendWith(SpringExtension.class)
 class GenericMapperTest {
   @Autowired
-  private GenericMapper<Socializador, SocializadorDto> genericMapper;
+  private GenericMapper<SocializadorEntity, SocializadorDto> genericMapper;
   @Autowired
-  private GenericMapper<Pessoa, PessoaDto> genericPessoaMapper;
+  private GenericMapper<PessoaEntity, PessoaDto> genericPessoaMapper;
 
   @Test
   void testToEntity() {
@@ -39,38 +39,38 @@ class GenericMapperTest {
     pessoaDto.setTelefoneFixo("Telefone Fixo");
     socializadorDto.setPessoa(pessoaDto);
 
-    Socializador socializador = this.genericMapper.toEntity(socializadorDto, Socializador.class);
-    socializador.setPessoa(genericPessoaMapper.toEntity(socializadorDto.getPessoa(), Pessoa.class));
-    Socializador expectedSocializador = new Socializador();
-    expectedSocializador.setEmail("123456789");
-    expectedSocializador.setRg("Rg");
-    expectedSocializador.setEndereco("Endereco");
-    expectedSocializador.setEstuda(true);
-    expectedSocializador.setLocalEstudo("Local Estudo");
-    expectedSocializador.setLocalTrabalho("Local Trabalho");
-    expectedSocializador.setOrgaoEmissor("Orgao Emissor");
-    expectedSocializador.setProfissao("Profissao");
+    SocializadorEntity socializadorEntity = this.genericMapper.toEntity(socializadorDto, SocializadorEntity.class);
+    socializadorEntity.setPessoaEntity(genericPessoaMapper.toEntity(socializadorDto.getPessoa(), PessoaEntity.class));
+    SocializadorEntity expectedSocializadorEntity = new SocializadorEntity();
+    expectedSocializadorEntity.setEmail("123456789");
+    expectedSocializadorEntity.setRg("Rg");
+    expectedSocializadorEntity.setEndereco("Endereco");
+    expectedSocializadorEntity.setEstuda(true);
+    expectedSocializadorEntity.setLocalEstudo("Local Estudo");
+    expectedSocializadorEntity.setLocalTrabalho("Local Trabalho");
+    expectedSocializadorEntity.setOrgaoEmissor("Orgao Emissor");
+    expectedSocializadorEntity.setProfissao("Profissao");
 
-    Pessoa pessoa = new Pessoa();
-    pessoa.setCpf("12345678910");
-    pessoa.setNome("Nome");
-    pessoa.setTelefoneCelular("Telefone Celular");
-    pessoa.setTelefoneFixo("Telefone Fixo");
-    expectedSocializador.setPessoa(pessoa);
+    PessoaEntity pessoaEntity = new PessoaEntity();
+    pessoaEntity.setCpf("12345678910");
+    pessoaEntity.setNome("Nome");
+    pessoaEntity.setTelefoneCelular("Telefone Celular");
+    pessoaEntity.setTelefoneFixo("Telefone Fixo");
+    expectedSocializadorEntity.setPessoaEntity(pessoaEntity);
 
-    assertEquals(socializador.getEmail(), expectedSocializador.getEmail());
-    assertEquals(socializador.getRg(), expectedSocializador.getRg());
-    assertEquals(socializador.getEndereco(), expectedSocializador.getEndereco());
-    assertEquals(socializador.isEstuda(), expectedSocializador.isEstuda());
-    assertEquals(socializador.getLocalEstudo(), expectedSocializador.getLocalEstudo());
-    assertEquals(socializador.getLocalTrabalho(), expectedSocializador.getLocalTrabalho());
-    assertEquals(socializador.getOrgaoEmissor(), expectedSocializador.getOrgaoEmissor());
-    assertEquals(socializador.getProfissao(), expectedSocializador.getProfissao());
+    assertEquals(socializadorEntity.getEmail(), expectedSocializadorEntity.getEmail());
+    assertEquals(socializadorEntity.getRg(), expectedSocializadorEntity.getRg());
+    assertEquals(socializadorEntity.getEndereco(), expectedSocializadorEntity.getEndereco());
+    assertEquals(socializadorEntity.isEstuda(), expectedSocializadorEntity.isEstuda());
+    assertEquals(socializadorEntity.getLocalEstudo(), expectedSocializadorEntity.getLocalEstudo());
+    assertEquals(socializadorEntity.getLocalTrabalho(), expectedSocializadorEntity.getLocalTrabalho());
+    assertEquals(socializadorEntity.getOrgaoEmissor(), expectedSocializadorEntity.getOrgaoEmissor());
+    assertEquals(socializadorEntity.getProfissao(), expectedSocializadorEntity.getProfissao());
 
-    assertEquals(socializador.getPessoa().getCpf(), expectedSocializador.getPessoa().getCpf());
-    assertEquals(socializador.getPessoa().getNome(), expectedSocializador.getPessoa().getNome());
-    assertEquals(socializador.getPessoa().getTelefoneCelular(), expectedSocializador.getPessoa().getTelefoneCelular());
-    assertEquals(socializador.getPessoa().getTelefoneFixo(), expectedSocializador.getPessoa().getTelefoneFixo());
+    assertEquals(socializadorEntity.getPessoaEntity().getCpf(), expectedSocializadorEntity.getPessoaEntity().getCpf());
+    assertEquals(socializadorEntity.getPessoaEntity().getNome(), expectedSocializadorEntity.getPessoaEntity().getNome());
+    assertEquals(socializadorEntity.getPessoaEntity().getTelefoneCelular(), expectedSocializadorEntity.getPessoaEntity().getTelefoneCelular());
+    assertEquals(socializadorEntity.getPessoaEntity().getTelefoneFixo(), expectedSocializadorEntity.getPessoaEntity().getTelefoneFixo());
 
   }
 

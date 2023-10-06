@@ -12,7 +12,7 @@ import java.util.Date;
 @Setter
 @ToString
 @Entity(name = "pessoa")
-public class Pessoa {
+public class PessoaEntity {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

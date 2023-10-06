@@ -1,6 +1,6 @@
-package hkeller.escolacaesguia.socializador.model;
+package hkeller.escolacaesguia.socializador.entity;
 
-import hkeller.escolacaesguia.pessoa.Pessoa;
+import hkeller.escolacaesguia.pessoa.PessoaEntity;
 import hkeller.escolacaesguia.socializador.enums.EnumEstadoCivil;
 import hkeller.escolacaesguia.socializador.enums.EnumGrauInstrucao;
 import jakarta.persistence.*;
@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Getter
 @Entity
 @Table(name = "socializador")
-public class Socializador implements Serializable {
+public class SocializadorEntity implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,13 +29,16 @@ public class Socializador implements Serializable {
   private String orgaoEmissor;
 
   private String endereco;
+
   @Enumerated(EnumType.STRING)
   @Column(name = "grau_instrucao")
   private EnumGrauInstrucao grauInstrucao;
 
   private String profissao;
+
   @Column(name = "local_trabalho")
   private String localTrabalho;
+
   private boolean estuda;
 
   @Column(name = "local_estudo")
@@ -47,6 +50,6 @@ public class Socializador implements Serializable {
 
   @OneToOne(optional = false, orphanRemoval = true)
   @JoinColumn(name = "id_pessoa", nullable = false)
-  private Pessoa pessoa;
+  private PessoaEntity pessoaEntity;
 
 }
