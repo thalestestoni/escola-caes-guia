@@ -7,6 +7,7 @@ import hkeller.escolacaesguia.pessoa.repository.PessoaRepository;
 import hkeller.escolacaesguia.socializador.dto.SocializadorDto;
 import hkeller.escolacaesguia.socializador.entity.SocializadorEntity;
 import hkeller.escolacaesguia.socializador.repository.SocializadorRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +30,7 @@ public class SocializadorService {
     this.socializadorMapper = socializadorMapper;
   }
 
+  @Transactional
   public void insert(SocializadorDto dto) {
     SocializadorEntity socializadorEntity = socializadorMapper.toEntity(dto, SocializadorEntity.class);
     socializadorEntity.setPessoaEntity(pessoaMapper.toEntity(dto.getPessoa(), PessoaEntity.class));
