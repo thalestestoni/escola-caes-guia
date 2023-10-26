@@ -1,5 +1,6 @@
 package hkeller.escolacaesguia.visita.controller;
 
+import hkeller.escolacaesguia.visita.dtos.RequisicaoCadastroVisitasDto;
 import hkeller.escolacaesguia.visita.model.Visita;
 import hkeller.escolacaesguia.visita.services.VisitaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ public class VisitaController {
 
   private final VisitaService visitaService;
 
+
   @Autowired
   public VisitaController(VisitaService visitaService) {
     this.visitaService = visitaService;
@@ -29,6 +31,9 @@ public class VisitaController {
 
   @GetMapping("/cadastro")
   public String cadastroVisita(Model model) {
+    RequisicaoCadastroVisitasDto visitas = new RequisicaoCadastroVisitasDto();
+    model.addAttribute("visitas", visitas);
+
     Visita visita = new Visita();
     model.addAttribute("visita", visita);
     return "visita/cadastro";
@@ -39,14 +44,15 @@ public class VisitaController {
     visitaService.save(visita);
     return "redirect:/visitas";
   }
-  @GetMapping("/editar/{id}")
+
+  @GetMapping("{id}/editar")
   public String editarVisita(@PathVariable Long id, Model model) {
     Visita visita = visitaService.getVisitaById(id);
     model.addAttribute("visita", visita);
     return "visita/editar";
   }
 
-  @GetMapping("/visualizar/{id}")
+  @GetMapping("{id}/visualizar")
   public String visualizarVisita(@PathVariable Long id, Model model) {
     Visita visita = visitaService.getVisitaById(id);
     model.addAttribute("visita", visita);
